@@ -1,0 +1,381 @@
+html {
+    height: 100%;
+    min-width: 32rem; //最低宽度320px;
+    max-height: 100%;
+    font-size: 62.5%;//1rem=1em=10px 设置默认的字体
+    -webkit-font-smoothing: antialiased;
+}
+
+body {
+    height: 100%;
+    font-family: $fontOSX;
+    font-size: 1.4rem;
+    line-height: 1.6em;
+    color: #3A4145;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+    margin:0;
+    padding:0;
+}
+h6{font-size:1.4rem}
+h5{font-size:1.6rem}
+h4{font-size:1.8rem}
+h3{font-size:2.2rem}
+h2{font-size:2.8rem}
+h1{font-size:3.2rem}
+
+*,
+*:before,
+*:after {
+    -webkit-transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, opacity 0.5s ease;
+    -moz-transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, opacity 0.5s ease;
+    -ms-transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, opacity 0.5s ease;
+    -o-transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, opacity 0.5s ease;
+    transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, opacity 0.5s ease;
+}
+
+a{
+    text-decoration: none;
+    &:hover{
+    color:#60D9EF;
+    transition: transform 0.5s ease;
+    }
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    font-size: 0
+}
+
+.clearfix {
+    zoom: 1
+}
+
+
+/* 顶部cover image相关 */
+
+.post-cover-info{
+    width: 75%;
+    height: 20rem;
+    text-align: center;
+    color:rgba(255,255,255,0.5);
+    color:#fff;
+    position:absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin:auto;
+}
+
+.post-title{
+    line-height: 2.8rem;
+}
+
+.post-cover-info .post-title{
+    color: #fff;
+    font-family: $fontOSX;
+    a{
+        font-size:4rem;
+        color:#fff;
+        line-height:3rem;
+        text-shadow: 0 1px 5px #d3d3d3;
+        -webkit-transition: all .5s ease;
+        transition: transform 0.5s ease;
+        &:hover{
+            text-shadow: 0 1px 5px #efefef;
+        }
+    }
+}
+
+.post-publish-time{
+    text-transform:uppercase;
+    font-family: $googleFontExo;
+    -webkit-transition: all .5s ease;
+    margin-top: 2rem;
+    font-size: 2.4rem;
+    &:hover{
+        color:rgba(255,255,255,0.5);
+        transition: transform 0.5s ease;
+    }
+}
+
+.post-tags{
+    margin-top: 2rem;
+a{
+    color:#efefef;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+    padding: .2rem .5rem;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.2);
+    &:hover{
+        background: rgba(0,0,0,0.5);
+    }
+}
+}
+
+
+
+.top-bar{
+
+}
+
+
+
+
+
+code[class*='language-'],pre[class*='language-'],code[class*='lang-'],pre[class*='lang-'] ,code {
+    color: inherit;
+    text-shadow: none;
+}
+
+
+:not(pre)>code[class*='language-'],code[class*='lang-'],pre[class*='language-'],pre[class*='lang-'],pre{
+    background: rgba(234,239,242,0.25);
+    border-left: 6px solid rgba(0,83,159,0.65);
+    background-image: url(#{$imgPath}/blueprint-dark.png);
+    background-position: top center;
+    background-repeat: repeat;
+}
+
+.cover-wrap{
+    position:relative;
+    overflow: hidden;
+}
+
+.site-head{
+width: 100%;
+height:100%;
+background: url(#{$imgPath}/main.png) no-repeat center center;
+background-size: cover;
+box-shadow: inset 0 -5px 10px rgba(0,0,0,.2);
+margin-bottom: 1.5em;
+}
+
+.regual,.blurred{
+    position:absolute;
+    width: 100%;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.regular{
+opacity:1;
+}
+.blurred{
+opacity:0;
+}
+
+
+.post-in-list{
+    width: 64%;
+    margin: 0 auto;
+
+    img{
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+.single-post{
+    width: 64%;
+    max-width: 80rem;
+    margin: 0 auto;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    img{
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+        height: auto;
+        &:hover{
+            box-shadow:inset 0 0 1px rgba(255,255,255,0.5)
+        }
+    }
+}
+
+.single-post-inner{
+    font-family: $googleFontExo $fontOSX;
+    a{
+        display: inline-block;
+        line-height: 1.6rem;
+        &:hover{
+            opacity: .8;
+        }
+    }
+}
+
+.post-content a{
+    color:#97A5C0;
+    &:hover{
+
+    }
+}
+
+.post-content p{
+    color:#505255;
+    margin-top: 20px;
+}
+
+
+.post-in-list{
+    background: rgba(111,111,111,0.5);
+}
+
+.post-content blockquote{
+font-size: 1.8rem;
+width: 110%;
+margin-left: -5%;
+font-style: italic;
+color:#9e9d95;
+        &:hover{
+            color:#505255;
+            text-shadow: 0 0 1px #fff;
+        }
+}
+
+.site-footer{
+background: #f9f9f9;
+text-align: center;
+color: #8e9798;
+margin: 0 auto;
+text-transform:uppercase;
+font-family:$googleFontExo ;
+height:20rem;
+a{
+color:#666665;
+}
+.inner{
+    width: 80%;
+    margin: 5rem auto;
+}
+}
+
+
+/* 返回顶部样式 */
+
+#to-top {
+  width: 48px;
+  height: 48px;
+  text-align: left;
+  text-indent: -9999px;
+  background: transparent url(#{$imgPath}/to-top.png) no-repeat;
+  overflow: hidden;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  -khtml-opacity: .5;
+  -moz-opacity: .5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+#to-top:hover {
+  -khtml-opacity: .2;
+  -moz-opacity: .2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+  opacity: .2;
+}
+
+
+
+
+.img_sina_share {
+display: none;
+position: absolute;
+cursor: pointer;
+}
+
+
+.author{
+border-top: 1px solid #e5e5e5;
+border-bottom: 1px solid #e5e5e5;
+clear: both;
+font-size: 1.4rem;
+padding: 1rem;
+margin-top: 3rem;
+}
+
+.post-author-avatar{
+float: left;
+margin: 24px 40px 20px 0;
+overflow: hidden;
+}
+
+.post-author-avatar img{
+    width: 80px;
+    border-radius:50%;
+}
+
+/* 封面按钮 */
+.story-cover-arrow{
+content: '';
+display: block;
+width: 24px;
+height: 24px;
+position: absolute;
+bottom: 40px;
+left: 50%;
+border: 2px solid rgba(255,255,255,0.35);
+background: rgba(0,0,0,0);
+border-left: 0;
+border-top: 0;
+outline: 0;
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+transform: rotate(45deg);
+cursor: pointer;
+    &:hover{
+        border: 3px solid rgba(255,255,255,0.65);
+        border-left: 0;
+        border-top: 0;
+    }
+}
+
+
+
+/* iconfont相关 */
+.share{
+    text-align: center;
+    width: 100%;
+    margin:0 auto;
+    border-top:1px dashed #e5e5e5;
+    h4{
+        letter-spacing: .5rem;
+        margin-top: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.share a{
+    display: block;
+    float: left;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin:0 1rem 0 0;
+    height: 2.5rem;
+    i{
+        font-size: 3rem;
+    }
+}
+
+.share-icons{
+    text-align: center;
+    width: 20rem;
+    height: 3rem;
+    margin:0 auto;
+}
+
+
+
+#imgSinaShare{
+    display: none;
+}

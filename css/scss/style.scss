@@ -1,0 +1,53 @@
+/**
+ * 这里是ghostwill主题的基础样式
+ * author:@罗罗磊磊
+ * url: http://this.is26.com
+ * blog: http://luolei.org
+ * 本主题使用 Sass，这里是基本文件
+ */
+
+//reset 样式
+@import "normalize";
+@import "mixins";
+@import "fonts";
+@import "base";
+@import "animate";
+
+@media only screen and (max-width: 321px) {
+
+        // styles in 481up.scss
+        @import "321up";
+
+} // end of media query
+
+@media only screen and (max-width: 481px) {
+
+        // styles in 481up.scss
+        @import "481up";
+
+} // end of media query
+
+
+@media only screen and (max-width: 768px) {
+
+        // import grids
+        @import "grid";
+
+        // styles in 768up.scss
+        @import "768up";
+
+} // end of media query
+
+
+@media only screen and (max-width: 1030px) {
+
+        // styles in 1030up.scss
+        @import "1030up";
+
+} // end of media query
+
+
+
+@media print {
+    @import "print";
+} // end of media query
