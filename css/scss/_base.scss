@@ -83,7 +83,7 @@ a{
     a{
         font-size:4rem;
         color:#fff;
-        line-height:3rem;
+        line-height:4rem;
         text-shadow: 0 1px 5px #d3d3d3;
         -webkit-transition: all .5s ease;
         transition: transform 0.5s ease;
@@ -208,6 +208,18 @@ opacity:0;
             opacity: .8;
         }
     }
+    .iconfont{
+        font-size: 1.6rem;
+        vertical-align: top;
+        margin-left: .1rem;
+        margin-right: .1rem;
+    }
+}
+
+img.imgWrapOut{
+    width: 120%;
+    margin-left: -10%;
+    max-width: 120%;
 }
 
 .post-content a{

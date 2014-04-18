@@ -372,9 +372,11 @@ img::-moz-selection {
   display: inline-block;
   speak: none; }
 
-.iconfont:hover {
-  opacity: 0.6;
-  color: #363636; }
+.iconfont {
+  vertical-align: middle; }
+  .iconfont:hover {
+    opacity: 0.6;
+    color: #363636; }
 
 .icon-self {
   color: red; }
@@ -506,7 +508,7 @@ a {
   .post-cover-info .post-title a {
     font-size: 4rem;
     color: #fff;
-    line-height: 3rem;
+    line-height: 4rem;
     text-shadow: 0 1px 5px #d3d3d3;
     -webkit-transition: all .5s ease;
     transition: transform 0.5s ease; }
@@ -597,6 +599,16 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
     line-height: 1.6rem; }
     .single-post-inner a:hover {
       opacity: .8; }
+  .single-post-inner .iconfont {
+    font-size: 1.6rem;
+    vertical-align: top;
+    margin-left: .1rem;
+    margin-right: .1rem; }
+
+img.imgWrapOut {
+  width: 120%;
+  margin-left: -10%;
+  max-width: 120%; }
 
 .post-content a {
   color: #97A5C0; }

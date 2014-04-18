@@ -70,6 +70,31 @@ function checkKey(e) {
 }
 
 
+/*检查图片原始高度*/
+function checkFirstImg(img){
+
+    var img_real_width,
+        img_real_height;
+        $('<img/>').attr('src',$(img).attr('src')).load(function(){
+            img_real_width=this.width;
+            img_real_height=this.height;
+            /*处理inner中的图片*/
+            var visualContainerWidh=$(window).width(),
+                contentWidth=$('.post-content').width()
+
+            if(visualContainerWidh>800 &&img_real_width > contentWidth){
+                $(img).addClass('imgWrapOut animated fadeInUp');
+            }
+        })
+
+}
+
+
+$('.single-post-inner img').each(function(){
+    var _img=$(this);
+     checkFirstImg(_img);
+})
+
 
     /*判断cover-image插件*/
 
@@ -116,12 +141,6 @@ function checkKey(e) {
 
 
 
-/*模拟一个Vim上下滚动*/
-function keyControl(){
-
-}
-
-
 
 /*向下滚动顶部虚化*/
 
@@ -154,7 +173,8 @@ function urlIconlize(url){
         'weibo':'icon-weibo',
         'facebook':'icon-facebook',
         'github':'icon-github',
-        'douban':'icon-douban'
+        'douban':'icon-douban',
+        'google':'icon-google'
 
     }
 
@@ -168,6 +188,7 @@ function urlIconlize(url){
             }
         }
     }
+
     return _output;
 }
 
@@ -182,7 +203,7 @@ function isSiteDomain(url){
 $(document).ready(function(){
 
     /*给博客文章地址url添加ico识别*/
-    $('.single-post-inner p a').each(function(i){
+    $('.single-post-inner p a:not(:has(img))').each(function(i){
         var _src=$(this).attr('href');
         var tmp=document.createElement('a');
         tmp.href=_src;
@@ -198,8 +219,10 @@ $(document).ready(function(){
         /*鼠标悬浮时*/
         $(this).hover(function(){
             $(this).css('color',_selfColor);
+            $(this).addClass('animated swing');
         },function(){
             $(this).css('color',_originalColor);
+            $(this).removeClass('animated swing');
         });
 
     })
