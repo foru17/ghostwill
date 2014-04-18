@@ -25,16 +25,21 @@
     }
 }
 
+.icon-self{color:red}
 .icon-weibo{ color:#E6162D}
 .icon-twitter{color:#2aa9e0}
 .icon-facebook{color:#204385}
+.icon-google{color:#176DEE}
 .icon-weixin{color:#75D140}
 .icon-qzone{color:#186CC6}
-
+.icon-github{color:#333333}
+.icon-douban{color:#279337}
 
 /* 自定义IconFont CSS 才用:before的形式 */
 .single-post-inner{
-
+    .icon-local:before{
+        content: "\0f00ac";
+    }
     .icon-twitter:before{
         content: "\00e763";
     }
@@ -47,6 +52,9 @@
     .icon-facebook:before{
         content: "\003433";
     }
+    .icon-google:before{
+        content: "\003434";
+    }
     .icon-github:before{
         content: "\0f01ca";
     }
@@ -57,5 +65,5 @@
 }
 
 
-.icon-douban{color:#279337}
+
 

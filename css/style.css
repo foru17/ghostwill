@@ -376,6 +376,9 @@ img::-moz-selection {
   opacity: 0.6;
   color: #363636; }
 
+.icon-self {
+  color: red; }
+
 .icon-weibo {
   color: #E6162D; }
 
@@ -385,13 +388,24 @@ img::-moz-selection {
 .icon-facebook {
   color: #204385; }
 
+.icon-google {
+  color: #176DEE; }
+
 .icon-weixin {
   color: #75D140; }
 
 .icon-qzone {
   color: #186CC6; }
 
+.icon-github {
+  color: #333333; }
+
+.icon-douban {
+  color: #279337; }
+
 /* 自定义IconFont CSS 才用:before的形式 */
+.single-post-inner .icon-local:before {
+  content: "\0f00ac"; }
 .single-post-inner .icon-twitter:before {
   content: "\00e763"; }
 .single-post-inner .icon-qzone:before {
@@ -400,13 +414,12 @@ img::-moz-selection {
   content: "\003432"; }
 .single-post-inner .icon-facebook:before {
   content: "\003433"; }
+.single-post-inner .icon-google:before {
+  content: "\003434"; }
 .single-post-inner .icon-github:before {
   content: "\0f01ca"; }
 .single-post-inner .icon-douban:before {
   content: "\0f01c8"; }
-
-.icon-douban {
-  color: #279337; }
 
 html {
   height: 100%;
