@@ -485,6 +485,13 @@ a {
 .clearfix {
   zoom: 1; }
 
+.top-bar {
+  height: 20rem; }
+
+.content {
+  width: 64%;
+  margin: 0 auto; }
+
 /* 顶部cover image相关 */
 .post-cover-info {
   width: 75%;
@@ -499,8 +506,10 @@ a {
   bottom: 0;
   margin: auto; }
 
+/* 主页的文章标题 */
 .post-title {
-  line-height: 2.8rem; }
+  line-height: 2.8rem;
+  text-align: center; }
 
 .post-cover-info .post-title {
   color: #fff;
@@ -572,11 +581,23 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
   opacity: 0; }
 
 .post-in-list {
-  width: 64%;
-  margin: 0 auto; }
+  position: relative;
+  border: 1px solid rgba(17, 17, 17, 0.5);
+  margin-top: 5rem; }
   .post-in-list img {
+    width: 100%;
     max-width: 100%;
     height: auto; }
+
+.post-meta {
+  width: 100%; }
+
+.post-excerpt {
+  font-size: 1.8rem;
+  line-height: 3.2rem; }
+  .post-excerpt p {
+    margin: 0;
+    padding: 0; }
 
 .single-post {
   width: 64%;
@@ -606,9 +627,7 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
     margin-right: .1rem; }
 
 img.imgWrapOut {
-  width: 120%;
-  margin-left: -10%;
-  max-width: 120%; }
+  max-width: 200%; }
 
 .post-content a {
   color: #97A5C0; }
@@ -617,13 +636,12 @@ img.imgWrapOut {
   color: #505255;
   margin-top: 20px; }
 
-.post-in-list {
-  background: rgba(111, 111, 111, 0.5); }
-
+/* 首页每篇单独文章 */
 .post-content blockquote {
   font-size: 1.8rem;
   width: 110%;
   margin-left: -5%;
+  text-align: center;
   font-style: italic;
   color: #9e9d95; }
   .post-content blockquote:hover {
@@ -643,6 +661,10 @@ img.imgWrapOut {
   .site-footer .inner {
     width: 80%;
     margin: 5rem auto; }
+
+/* 导航栏 */
+.pagination {
+  text-align: center; }
 
 /* 返回顶部样式 */
 #to-top {
@@ -691,14 +713,24 @@ img.imgWrapOut {
   border-radius: 50%; }
 
 /* 封面按钮 */
+.cover-slide-more {
+  position: absolute;
+  bottom: 40px;
+  left: 50%; }
+  .cover-slide-more h4 {
+    margin-top: .5rem;
+    margin-left: -2.5rem;
+    letter-spacing: .3rem; }
+    .cover-slide-more h4:hover {
+      text-shadow: 0 0 1px rgba(0, 0, 0, 0.5); }
+  .cover-slide-more.hoverLight {
+    opacity: .7; }
+
 .story-cover-arrow {
   content: '';
   display: block;
   width: 24px;
   height: 24px;
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
   border: 2px solid rgba(255, 255, 255, 0.35);
   background: transparent;
   border-left: 0;
@@ -710,10 +742,6 @@ img.imgWrapOut {
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
   cursor: pointer; }
-  .story-cover-arrow:hover {
-    border: 3px solid rgba(255, 255, 255, 0.65);
-    border-left: 0;
-    border-top: 0; }
 
 /* iconfont相关 */
 .share {

@@ -57,6 +57,16 @@ a{
 }
 
 
+.top-bar{
+    height: 20rem;
+}
+
+
+.content{
+    width: 64%;
+    margin:0 auto;
+}
+
 /* 顶部cover image相关 */
 
 .post-cover-info{
@@ -73,8 +83,11 @@ a{
     margin:auto;
 }
 
+/* 主页的文章标题 */
 .post-title{
     line-height: 2.8rem;
+    text-align: center;
+
 }
 
 .post-cover-info .post-title{
@@ -173,13 +186,29 @@ opacity:0;
 
 
 .post-in-list{
-    width: 64%;
-    margin: 0 auto;
+    position:relative;
+    border:1px solid rgba(17,17,17,.5);
+    margin-top: 5rem;
 
     img{
+        width: 100%;
         max-width: 100%;
         height: auto;
     }
+}
+
+.post-meta{
+    width: 100%;
+}
+
+.post-excerpt{
+
+font-size: 1.8rem;
+line-height: 3.2rem;
+p{
+    margin:0;
+    padding: 0;
+}
 }
 
 .single-post{
@@ -217,9 +246,7 @@ opacity:0;
 }
 
 img.imgWrapOut{
-    width: 120%;
-    margin-left: -10%;
-    max-width: 120%;
+    max-width: 200%;
 }
 
 .post-content a{
@@ -234,15 +261,16 @@ img.imgWrapOut{
     margin-top: 20px;
 }
 
-
+/* 首页每篇单独文章 */
 .post-in-list{
-    background: rgba(111,111,111,0.5);
+
 }
 
 .post-content blockquote{
 font-size: 1.8rem;
 width: 110%;
 margin-left: -5%;
+text-align:center;
 font-style: italic;
 color:#9e9d95;
         &:hover{
@@ -268,6 +296,10 @@ color:#666665;
 }
 }
 
+/* 导航栏 */
+.pagination{
+text-align:center;
+}
 
 /* 返回顶部样式 */
 
@@ -326,14 +358,29 @@ overflow: hidden;
 }
 
 /* 封面按钮 */
+
+.cover-slide-more{
+position: absolute;
+bottom: 40px;
+left: 50%;
+    h4{
+    margin-top: .5rem;
+    margin-left: -2.5rem;
+    letter-spacing: .3rem;
+    &:hover{
+        text-shadow: 0 0 1px rgba(0,0,0,0.5);
+    }
+    }
+    &.hoverLight{
+        opacity: .7;
+    }
+}
+
 .story-cover-arrow{
 content: '';
 display: block;
 width: 24px;
 height: 24px;
-position: absolute;
-bottom: 40px;
-left: 50%;
 border: 2px solid rgba(255,255,255,0.35);
 background: rgba(0,0,0,0);
 border-left: 0;
@@ -346,10 +393,12 @@ outline: 0;
 transform: rotate(45deg);
 cursor: pointer;
     &:hover{
-        border: 3px solid rgba(255,255,255,0.65);
-        border-left: 0;
-        border-top: 0;
+        // border: 3px solid rgba(255,255,255,0.65);
+        // border-left: 0;
+        // border-top: 0;
     }
+
+
 }
 
 

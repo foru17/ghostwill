@@ -8,41 +8,41 @@ var _siteDomain=  'luolei.org' || window.location.host;
 
 
 
-var eleImgShare = document.getElementById("imgSinaShare");
-/*选中文字分享到社交网站*/
-var $sinaMiniBlogShare = function(eleShare, eleContainer) {
-    var eleTitle = document.getElementsByTagName("title")[0];
-    eleContainer = eleContainer || document;
-    var funGetSelectTxt = function() {
-        var txt = "";
-        if(document.selection) {
-            txt = document.selection.createRange().text;    // IE
-        } else {
-            txt = document.getSelection();
-        }
-        return txt.toString();
-    };
-    eleContainer.onmouseup = function(e) {
-        e = e || window.event;
-        var txt = funGetSelectTxt(), sh = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-        var left = (e.clientX - 40 < 0) ? e.clientX + 20 : e.clientX - 40, top = (e.clientY - 40 < 0) ? e.clientY + sh + 20 : e.clientY + sh - 40;
-        if (txt) {
-            eleShare.style.display = "inline";
-            eleShare.style.left = left + "px";
-            eleShare.style.top = top + "px";
-        } else {
-            eleShare.style.display = "none";
-        }
-    };
-    eleShare.onclick = function() {
-        var txt = funGetSelectTxt(), title = (eleTitle && eleTitle.innerHTML)? eleTitle.innerHTML : "未命名页面";
-        if (txt) {
-            window.open('http://v.t.sina.com.cn/share/share.php?title=' + txt + '→来自页面"' + title + '"的文字片段&url=' + window.location.href);
-        }
-    };
-};
+// var eleImgShare = document.getElementById("imgSinaShare");
+// /*选中文字分享到社交网站*/
+// var $sinaMiniBlogShare = function(eleShare, eleContainer) {
+//     var eleTitle = document.getElementsByTagName("title")[0];
+//     eleContainer = eleContainer || document;
+//     var funGetSelectTxt = function() {
+//         var txt = "";
+//         if(document.selection) {
+//             txt = document.selection.createRange().text;    // IE
+//         } else {
+//             txt = document.getSelection();
+//         }
+//         return txt.toString();
+//     };
+//     eleContainer.onmouseup = function(e) {
+//         e = e || window.event;
+//         var txt = funGetSelectTxt(), sh = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+//         var left = (e.clientX - 40 < 0) ? e.clientX + 20 : e.clientX - 40, top = (e.clientY - 40 < 0) ? e.clientY + sh + 20 : e.clientY + sh - 40;
+//         if (txt) {
+//             eleShare.style.display = "inline";
+//             eleShare.style.left = left + "px";
+//             eleShare.style.top = top + "px";
+//         } else {
+//             eleShare.style.display = "none";
+//         }
+//     };
+//     eleShare.onclick = function() {
+//         var txt = funGetSelectTxt(), title = (eleTitle && eleTitle.innerHTML)? eleTitle.innerHTML : "未命名页面";
+//         if (txt) {
+//             window.open('http://v.t.sina.com.cn/share/share.php?title=' + txt + '→来自页面"' + title + '"的文字片段&url=' + window.location.href);
+//         }
+//     };
+// };
 
-$sinaMiniBlogShare(document.getElementById("imgSinaShare"));
+// $sinaMiniBlogShare(document.getElementById("imgSinaShare"));
 
 /*图片延迟加载*/
 
@@ -71,8 +71,7 @@ function checkKey(e) {
 
 
 /*检查图片原始高度*/
-function checkFirstImg(img){
-
+function checkImg(img){
     var img_real_width,
         img_real_height;
         $('<img/>').attr('src',$(img).attr('src')).load(function(){
@@ -82,8 +81,13 @@ function checkFirstImg(img){
             var visualContainerWidh=$(window).width(),
                 contentWidth=$('.post-content').width()
 
-            if(visualContainerWidh>800 &&img_real_width > contentWidth){
-                $(img).addClass('imgWrapOut animated fadeInUp');
+            if(visualContainerWidh>800 && img_real_width>980 && img_real_width > contentWidth){
+                $(img).css({
+                    'width':visualContainerWidh,
+                    'margin-left':-(visualContainerWidh-contentWidth)/2,
+                    'max-width':visualContainerWidh
+                });
+                $(img).addClass('imgWrapOut');
             }
         })
 
@@ -92,7 +96,7 @@ function checkFirstImg(img){
 
 $('.single-post-inner img').each(function(){
     var _img=$(this);
-     checkFirstImg(_img);
+     checkImg(_img);
 })
 
 
@@ -200,6 +204,20 @@ function isSiteDomain(url){
 
 
 
+
+/*窗口重新变化的时候*/
+
+$(window).resize(function() {
+    /*重新修改文章图片大小*/
+    $('.single-post-inner img').each(function(){
+        var _img=$(this);
+         checkImg(_img);
+    })
+});
+
+
+
+/*Document Ready*/
 $(document).ready(function(){
 
     /*给博客文章地址url添加ico识别*/
@@ -219,10 +237,10 @@ $(document).ready(function(){
         /*鼠标悬浮时*/
         $(this).hover(function(){
             $(this).css('color',_selfColor);
-            $(this).addClass('animated swing');
+            $(this).addClass('animated pulse');
         },function(){
             $(this).css('color',_originalColor);
-            $(this).removeClass('animated swing');
+            $(this).removeClass('animated pulse');
         });
 
     })
@@ -239,14 +257,16 @@ $('.post-cover-info').addClass('animated fadeInDownBig')
     /*返回顶部*/
     var STR_TO_TOP='我要飞到最高';
     var coverHeight=$(window).height();//获得图片高度
-        $('.story-cover-arrow').click(function(){
+        $('.cover-slide-more').click(function(){
             $('html,body').animate({scrollTop:coverHeight},500);
             return false;
         })
-        $('.story-cover-arrow').hover(function(){
+        $('.cover-slide-more').hover(function(){
+            $(this).addClass('hoverLight');
             $('.post-cover-info').addClass('animated fadeOutUp');
         },function(){
             console.log('重现');
+            $(this).removeClass('hoverLight');
             $('.post-cover-info').removeClass('fadeOutUp');
             $('.post-cover-info').addClass('fadeInDown');
         });
