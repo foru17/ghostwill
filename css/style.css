@@ -405,6 +405,9 @@ img::-moz-selection {
 .icon-douban {
   color: #279337; }
 
+.icon-luolei {
+  color: #258342; }
+
 /* 自定义IconFont CSS 才用:before的形式 */
 .single-post-inner .icon-local:before {
   content: "\0f00ac"; }
@@ -422,6 +425,8 @@ img::-moz-selection {
   content: "\0f01ca"; }
 .single-post-inner .icon-douban:before {
   content: "\0f01c8"; }
+.single-post-inner .icon-luolei:before {
+  content: "\00e60e"; }
 
 html {
   height: 100%;
@@ -485,11 +490,33 @@ a {
 .clearfix {
   zoom: 1; }
 
+.fixed-body-background {
+  background-image: url(../../assets/images/bg2.jpg);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -2; }
+
 .top-bar {
-  height: 20rem; }
+  height: 5rem;
+  background: url(../../assets/images/chalkboard.jpg) repeat; }
+
+.banner {
+  width: 100%;
+  height: 45rem;
+  background: #fff;
+  opacity: .5;
+  background-size: cover; }
+
+.site-head-content {
+  width: 70%;
+  margin: 0 auto; }
 
 .content {
-  width: 64%;
   margin: 0 auto; }
 
 /* 顶部cover image相关 */
@@ -509,7 +536,12 @@ a {
 /* 主页的文章标题 */
 .post-title {
   line-height: 2.8rem;
-  text-align: center; }
+  text-align: center;
+  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
+  .post-title a {
+    color: rgba(0, 0, 0, 0.7);
+    line-height: 2.4rem;
+    font-size: 1.8rem; }
 
 .post-cover-info .post-title {
   color: #fff;
@@ -581,15 +613,38 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
   opacity: 0; }
 
 .post-in-list {
+  width: 70%;
+  max-width: 74rem;
   position: relative;
-  border: 1px solid rgba(17, 17, 17, 0.5);
-  margin-top: 5rem; }
+  margin: 5rem auto;
+  background: #fff; }
   .post-in-list img {
     width: 100%;
     max-width: 100%;
     height: auto; }
 
 .post-meta {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
+
+.post-time, .post-tags {
+  display: block;
+  height: 2.4rem;
+  line-height: 2.4rem; }
+
+.post-time {
+  width: 100%;
+  text-decoration: uppercase;
+  font-size: 1.8rem; }
+  .post-time time {
+    width: 14rem;
+    letter-spacing: .2rem;
+    margin: 0 auto;
+    border-bottom: 1px dashed #e3e3e3; }
+
+.post-tags {
   width: 100%; }
 
 .post-excerpt {
@@ -598,6 +653,15 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
   .post-excerpt p {
     margin: 0;
     padding: 0; }
+
+.hidden {
+  display: none; }
+
+.excerpt-word {
+  padding: 3rem 2rem;
+  text-align: justify;
+  font-size: 1.8rem;
+  line-height: 2.6rem; }
 
 .single-post {
   width: 64%;
@@ -634,7 +698,8 @@ img.imgWrapOut {
 
 .post-content p {
   color: #505255;
-  margin-top: 20px; }
+  margin-top: 2.2rem;
+  text-align: justify; }
 
 /* 首页每篇单独文章 */
 .post-content blockquote {
@@ -715,12 +780,14 @@ img.imgWrapOut {
 /* 封面按钮 */
 .cover-slide-more {
   position: absolute;
-  bottom: 40px;
+  bottom: 4rem;
   left: 50%; }
   .cover-slide-more h4 {
+    display: none;
     margin-top: .5rem;
     margin-left: -2.5rem;
-    letter-spacing: .3rem; }
+    letter-spacing: .3rem;
+    color: rgba(255, 255, 255, 0.5); }
     .cover-slide-more h4:hover {
       text-shadow: 0 0 1px rgba(0, 0, 0, 0.5); }
   .cover-slide-more.hoverLight {

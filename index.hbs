@@ -4,14 +4,13 @@
     the {body} of the default.hbs template, which contains our header/footer. }}
 
 {{! The big featured header on the homepage, with the site logo and description }}
-<header class="top-bar">
-    <div class="vertical">
+<nav class="top-bar"></nav>
+<header class="banner">
         <div class="site-head-content inner">
             {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
             <h1 class="blog-title">{{@blog.title}}</h1>
            {{!--  <h2 class="blog-description">{{@blog.description}}</h2> --}}
         </div>
-    </div>
 </header>
 
 {{! The main content area on the homepage }}
@@ -24,13 +23,19 @@
         <section class="post-excerpt">
             {{content words="0"}}
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+            <div class="excerpt-word hidden">
             {{excerpt}}
+            </div>
         </section>
-
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
-        <div class="readmore-btn">
+            <div class="post-meta">
+            <span class="post-time"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+            <span class="post-tags">
+             {{tags prefix="" separator=" "}}
+            </span>
+            </div>
+{{!--         <div class="readmore-btn">
             <a class="btn" href="{{{url}}}" rel="bookmark">阅读更多</a>
-        </div>
+        </div> --}}
     </article>
 
     {{/foreach}}

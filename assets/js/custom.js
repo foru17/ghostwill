@@ -70,6 +70,9 @@ function checkKey(e) {
 }
 
 
+var visualContainerWidh=$(window).width();
+var contentWidth=$('.post-content').width();
+
 /*检查图片原始高度*/
 function checkImg(img){
     var img_real_width,
@@ -78,9 +81,6 @@ function checkImg(img){
             img_real_width=this.width;
             img_real_height=this.height;
             /*处理inner中的图片*/
-            var visualContainerWidh=$(window).width(),
-                contentWidth=$('.post-content').width()
-
             if(visualContainerWidh>800 && img_real_width>980 && img_real_width > contentWidth){
                 $(img).css({
                     'width':visualContainerWidh,
@@ -94,10 +94,30 @@ function checkImg(img){
 }
 
 
+
 $('.single-post-inner img').each(function(){
     var _img=$(this);
      checkImg(_img);
-})
+});
+/*处理iframe宽度*/
+$('.single-post-inner iframe').each(function(){
+    // console.log('处理iframe');
+    /*获得原始的width，调整适应比例*/
+    var _this=$(this);
+    var originalWidth=_this.attr('width'),
+        originalHeight=_this.attr('height');
+
+    scaleRatio=originalWidth / originalHeight;//获得长宽比
+
+    if(_this.hasClass('wrap')){
+        _this.css({
+                    'width':visualContainerWidh,
+                    'margin-left':-(visualContainerWidh-contentWidth)/2,
+                    'max-width':visualContainerWidh,
+                    'height':visualContainerWidh / scaleRatio
+        });
+    }
+});
 
 
     /*判断cover-image插件*/
@@ -141,10 +161,33 @@ $('.single-post-inner img').each(function(){
 
 
 
+/*首页显示简介*/
+
+$('.post-excerpt .post-title').each(function(){
+  var _this=$(this);
+    _this.hover(function(){
+        targetExcerpet=_this.closest('.post-excerpt').children('.excerpt-word');
+        targetExcerpet.show(500);
+    },function(){
+  var _this=$(this);
+        targetExcerpet=_this.closest('.post-excerpt').children('.excerpt-word');
+        targetExcerpet.hide(300);
+    })
+
+})
+
+
 /*顶部向下滚动*/
 
 
-
+/*如果没有tag，则默认隐藏*/
+$('.post-meta .post-tags').each(function(){
+    var _this=$(this);
+    console.log(_this.children().length);
+    if(_this.children().length == 0){
+        _this.addClass('hidden');
+    }
+})
 
 /*向下滚动顶部虚化*/
 
@@ -178,7 +221,8 @@ function urlIconlize(url){
         'facebook':'icon-facebook',
         'github':'icon-github',
         'douban':'icon-douban',
-        'google':'icon-google'
+        'google':'icon-google',
+        'luolei':'icon-luolei'
 
     }
 
@@ -209,6 +253,7 @@ function isSiteDomain(url){
 
 $(window).resize(function() {
     /*重新修改文章图片大小*/
+    console.log('Resize');
     $('.single-post-inner img').each(function(){
         var _img=$(this);
          checkImg(_img);
@@ -264,11 +309,13 @@ $('.post-cover-info').addClass('animated fadeInDownBig')
         $('.cover-slide-more').hover(function(){
             $(this).addClass('hoverLight');
             $('.post-cover-info').addClass('animated fadeOutUp');
+            $('.cover-slide-more h4').show().addClass('animated fadeInDown');
         },function(){
             console.log('重现');
             $(this).removeClass('hoverLight');
             $('.post-cover-info').removeClass('fadeOutUp');
             $('.post-cover-info').addClass('fadeInDown');
+            $('.cover-slide-more h4').hide();
         });
 
     $(function(){
