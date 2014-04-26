@@ -69,6 +69,18 @@ function checkKey(e) {
 
 }
 
+function cleanMask(){
+ $('.post-header-mask').css('opacity','0');
+}
+
+$('.post-cover-info').hover(function(){
+    console.log('清楚遮罩');
+    cleanMask();
+})
+
+/*顶部遮罩效果*/
+
+
 
 var visualContainerWidh=$(window).width();
 var contentWidth=$('.post-content').width();
@@ -76,12 +88,23 @@ var contentWidth=$('.post-content').width();
 /*检查图片原始高度*/
 function checkImg(img){
     var img_real_width,
-        img_real_height;
+        img_real_height,
+        isMarkWrap=false;//只有作者标记wrap class才会全宽显示
+        if($(img).hasClass('wrap') == true){
+            isMarkWrap = true;
+            console.log('wrap标记');
+            console.log($(img));
+        }else{
+            console.log('不满足wrap');
+            return;
+        }
+
         $('<img/>').attr('src',$(img).attr('src')).load(function(){
             img_real_width=this.width;
             img_real_height=this.height;
             /*处理inner中的图片*/
-            if(visualContainerWidh>800 && img_real_width>980 && img_real_width > contentWidth){
+
+            if(isMarkWrap == true && visualContainerWidh>800 && img_real_width>900 && img_real_width > contentWidth){
                 $(img).css({
                     'width':visualContainerWidh,
                     'margin-left':-(visualContainerWidh-contentWidth)/2,
@@ -112,11 +135,12 @@ $('.single-post-inner iframe').each(function(){
     /*获得原始的width，调整适应比例*/
     var _this=$(this);
     var originalWidth=_this.attr('width'),
-        originalHeight=_this.attr('height');
+        originalHeight=_this.attr('height'),
+        isMarkWrap=false;
 
-    scaleRatio=originalWidth / originalHeight;//获得长宽比
+        scaleRatio=originalWidth / originalHeight;//获得长宽比
 
-    if(_this.hasClass('wrap')){
+    if(_this.hasClass('wrap') && visualContainerWidh>800){
         _this.css({
                     'width':visualContainerWidh,
                     'margin-left':-(visualContainerWidh-contentWidth)/2,
@@ -266,7 +290,7 @@ function isSiteDomain(url){
 
 
 var searchField = $(".search-form-input").ghostHunter({
-    results   : ".search-bar-result",
+    results   : ".quick-search",
     onKeyUp         : true,
     result_template : "<a  class='searchResult' href='{{link}}'>{{title}}</a>",
     info_template   : "<h4>找到{{amount}}篇相关的文章</h4>",
@@ -278,7 +302,12 @@ var searchField = $(".search-form-input").ghostHunter({
 $('.search-form-input').focus(function(){
     console.log('触发');
     $('.search-bar-result').css({'visibility':'visible','opacity':'1'});
-})
+});
+
+// $('.search-form-input').blur(function(){
+//     console.log('触发');
+//     $('.search-bar-result').css({'visibility':'hidden','opacity':'0'});
+// });
 
 
 /*窗口重新变化的时候*/
@@ -324,8 +353,13 @@ $(document).ready(function(){
 
 
 /*添加一些元素动画*/
-$('.post-cover-info').addClass('animated fadeInDownBig')
+$('.post-cover-info').addClass('animated fadeInDownBig');
 
+$('.post-template').ready(function(){
+    console.log('文章页面加载完毕');
+    //cleanMask();
+    //$('.post-header-mask').delay(9000).css('opacity','0');
+})
 
 
 /*顶部图片视觉滚差*/
@@ -339,6 +373,7 @@ $('.post-cover-info').addClass('animated fadeInDownBig')
             return false;
         })
         $('.cover-slide-more').hover(function(){
+            cleanMask();
             $(this).addClass('hoverLight');
             $('.post-cover-info').addClass('animated fadeOutUp');
             $('.cover-slide-more h4').show().addClass('animated fadeInDown');

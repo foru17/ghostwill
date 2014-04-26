@@ -15,7 +15,9 @@
         </div>
         <div class="search-bar">
             <input type="text" class="search-form-input" placeholder="Search">
-                    <div class="search-bar-result"></div>
+                    <div class="search-bar-result">
+                        <div class="quick-search"></div>
+                    </div>
         </div>
 
     </div>
@@ -23,15 +25,26 @@
 <header class="banner">
         <div class="banner-mask"></div>
         <div class="site-head-content inner">
-            <h1 class="blog-title">{{@blog.title}}</h1>
+            <a class="home-blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
             {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
             <h2 class="blog-description">{{@blog.description}}</h2>
+            <div class="social-account">
+                <ul>
+                    <li>
+                        <a href="http://weibo.com/foru17"><i class="iconfont icon-weibo-pure">&#xe61c;</i></a>
+                        <a href="https://twitter.com/foru17"><i class="iconfont icon-twitter-pure">&#xf000e;</i></a>
+                        <a href="https://github.com/foru17"><i class="iconfont icon-github-pure">&#xe611;</i></a>
+                        <a href="https://dribbble.com/luolei"><i class="iconfont icon-dribble-pure">&#xe612;</i></a>
+                        <a href=""><i class="iconfont icon-weixin-pure">&#x343b;</i></a>
+                    </li>
+                </ul>
+            </div>
         </div>
+
 </header>
 
 {{! The main content area on the homepage }}
 <main id="container" class="content homepage" role="main">
-
     {{! Each post will be output using this markup }}
     {{#foreach posts}}
 
@@ -48,10 +61,10 @@
             </div>
         </section>
             <div class="post-meta">
-            <span class="post-time"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
-            <span class="post-tags">
-             {{tags prefix="" separator=" "}}
-            </span>
+                <span class="post-time"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+                <span class="post-tags">
+                 {{tags prefix="" separator=" "}}
+                </span>
             </div>
 {{!--         <div class="readmore-btn">
             <a class="btn" href="{{{url}}}" rel="bookmark"></a>

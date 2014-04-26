@@ -408,6 +408,24 @@ img::-moz-selection {
 .icon-luolei {
   color: #258342; }
 
+.icon-dribble {
+  color: #F72D84; }
+
+.icon-weibo-pure {
+  color: #E6162D; }
+
+.icon-twitter-pure {
+  color: #2aa9e0; }
+
+.icon-github-pure {
+  color: #333333; }
+
+.icon-dribble-pure {
+  color: #F72D84; }
+
+.icon-weixin-pure {
+  color: #75D140; }
+
 /* 自定义IconFont CSS 才用:before的形式 */
 .single-post-inner .icon-local:before {
   content: "\0f00ac"; }
@@ -564,8 +582,13 @@ a {
     text-align: center;
     width: 100%;
     font-size: 1.8rem;
+    height: 2.6rem;
     line-height: 2.4rem;
-    border-bottom: 1px solid #e3e3e3; }
+    border-bottom: 1px solid #e3e3e3;
+    margin-bottom: .5rem; }
+
+.quick-search {
+  padding: .5rem 1rem; }
 
 .searchResult {
   display: inline-block;
@@ -577,14 +600,17 @@ a {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis; }
+  .searchResult:hover {
+    color: #000; }
 
 .banner {
   position: relative;
   width: 100%;
-  height: 35rem;
+  height: 32rem;
   background: transparent;
   background-size: cover;
-  box-shadow: 0 1px 1px #efefef; }
+  box-shadow: 0 1px 1px #efefef;
+  z-index: 1; }
 
 .banner-mask {
   position: absolute;
@@ -593,15 +619,31 @@ a {
   left: 0;
   top: 0;
   background: #fff;
-  opacity: .5;
+  background-image: linear-gradient(to bottom, white, #ededed);
+  background-repeat: repeat-x;
+  opacity: .8;
   z-index: -2; }
 
 .site-head-content {
   width: 70%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  padding-top: 5rem; }
 
 .content {
   margin: 0 auto; }
+
+.home-blog-title {
+  color: rgba(17, 17, 17, 0.8);
+  font-size: 4.4rem;
+  font-weight: 900;
+  line-height: 3.4rem;
+  display: block;
+  width: 32rem;
+  margin: 0 auto;
+  text-align: center; }
+  .home-blog-title:hover {
+    color: rgba(17, 17, 17, 0.5);
+    text-shadow: 0 1px 3px #fff; }
 
 .blog-title {
   text-align: center;
@@ -615,7 +657,7 @@ a {
   margin: 0 auto;
   text-align: center; }
   .blog-logo img {
-    margin-top: 5rem;
+    margin-top: 3rem;
     width: 8.4rem;
     border-radius: 50%;
     box-shadow: 0 0 3px #efefef; }
@@ -625,6 +667,34 @@ a {
   font-weight: 100;
   text-align: center;
   font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
+  .blog-description:hover {
+    text-shadow: 0 0 1px #000; }
+
+.social-account {
+  text-align: center;
+  padding: 2rem; }
+  .social-account ul {
+    margin: 0;
+    padding: 0; }
+    .social-account ul li {
+      list-style: none;
+      display: inline-block; }
+      .social-account ul li a {
+        font-size: 3.2rem;
+        margin: 0 .3rem; }
+  .social-account .iconfont {
+    font-size: 1.8rem;
+    color: rgba(17, 17, 17, 0.5); }
+  .social-account .icon-weibo-pure:hover {
+    color: #E6162D; }
+  .social-account .icon-twitter-pure:hover {
+    color: #2aa9e0; }
+  .social-account .icon-github-pure:hover {
+    color: #333333; }
+  .social-account .icon-dribble-pure:hover {
+    color: #F72D84; }
+  .social-account .icon-weixin-pure:hover {
+    color: #75D140; }
 
 /* 顶部cover image相关 */
 .post-cover-info {
@@ -642,11 +712,14 @@ a {
 
 /* 主页的文章标题 */
 .post-title {
-  height: 3.4rem;
+  width: 100%;
   line-height: 3.2rem;
   padding-top: 1rem;
   text-align: center;
-  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
+  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3";
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; }
   .post-title a {
     color: rgba(0, 0, 0, 0.7);
     font-weight: 600;
@@ -730,12 +803,23 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
   overflow: hidden; }
 
 .site-head {
+  position: relative;
   width: 100%;
   height: 100%;
   background: url(../../assets/images/main.png) no-repeat center center;
   background-size: cover;
   box-shadow: inset 0 -5px 10px rgba(0, 0, 0, 0.2);
   margin-bottom: 1.5em; }
+
+.post-header-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .9; }
 
 .regual, .blurred {
   position: absolute;
@@ -749,7 +833,7 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
   opacity: 0; }
 
 .post-in-list {
-  width: 70%;
+  width: 64%;
   max-width: 96rem;
   position: relative;
   margin: 5rem auto;
@@ -858,7 +942,7 @@ img.imgWrapOut {
   margin-left: -5%;
   text-align: center;
   font-style: italic;
-  color: #9e9d95; }
+  color: #9A9A9A; }
   .post-content blockquote:hover {
     color: #505255;
     text-shadow: 0 0 1px #fff; }
@@ -972,21 +1056,21 @@ img.imgWrapOut {
   left: 50%; }
   .cover-slide-more h4 {
     display: none;
+    font-size: 2.4rem;
+    font-weight: 300;
     margin-top: .5rem;
-    margin-left: -2.5rem;
+    margin-left: -3.8rem;
     letter-spacing: .3rem;
-    color: rgba(255, 255, 255, 0.5); }
+    color: rgba(255, 255, 255, 0.95); }
     .cover-slide-more h4:hover {
       text-shadow: 0 0 1px rgba(0, 0, 0, 0.5); }
-  .cover-slide-more.hoverLight {
-    opacity: .7; }
 
 .story-cover-arrow {
   content: '';
   display: block;
-  width: 24px;
-  height: 24px;
-  border: 2px solid rgba(255, 255, 255, 0.35);
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0.4rem solid rgba(255, 255, 255, 0.5);
   background: transparent;
   border-left: 0;
   border-top: 0;
@@ -3257,7 +3341,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     .post-cover-info .post-title {
       line-height: 3rem; }
       .post-cover-info .post-title a {
-        font-size: 3rem; } }
+        font-size: 3rem; }
+
+  .nav-url {
+    width: 100%; }
+
+  .post-in-list {
+    width: 90%; }
+
+  .search-bar {
+    display: none; } }
 @media only screen and (max-width: 768px) {
   .single-post {
     width: 80%; }

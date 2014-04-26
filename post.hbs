@@ -4,6 +4,7 @@
     the {body} of the default.hbs template, which contains our header/footer. }}
 {{!-- 顶部图片x --}}
     <div id="post-header" class="site-head regular" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}  data-stellar-background-ratio="0.5" data-stellar-horizontal-offset="50" data-stellar-vertical-offset="50">
+        <div class="post-header-mask"></div>
                 <div class="post-cover-info">
                 {{#post}}
                     <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>

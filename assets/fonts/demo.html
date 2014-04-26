@@ -2,109 +2,8 @@
 <head>
     <meta charset="utf-8"/>
     <title>uxiconfont</title>
-    <style type="text/css">
-        *{margin: 0;padding: 0;list-style: none;}
-        /*
-KISSY CSS Reset
-理念：1. reset 的目的不是清除浏览器的默认样式，这仅是部分工作。清除和重置是紧密不可分的。
-     2. reset 的目的不是让默认样式在所有浏览器下一致，而是减少默认样式有可能带来的问题。
-     3. reset 期望提供一套普适通用的基础样式。但没有银弹，推荐根据具体需求，裁剪和修改后再使用。
-特色：1. 适应中文；2. 基于最新主流浏览器。
-维护：玉伯<lifesinger@gmail.com>, 正淳<ragecarrier@gmail.com>
-*/
-
-/** 清除内外边距 **/
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
-dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
-pre, /* text formatting elements 文本格式元素 */
-form, fieldset, legend, button, input, textarea, /* form elements 表单元素 */
-th, td /* table elements 表格元素 */ {
-    margin: 0;
-    padding: 0;
-}
-
-/** 设置默认字体 **/
-body,
-button, input, select, textarea /* for ie */ {
-    font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif;
-}
-h1, h2, h3, h4, h5, h6 { font-size: 100%; }
-address, cite, dfn, em, var { font-style: normal; } /* 将斜体扶正 */
-code, kbd, pre, samp { font-family: courier new, courier, monospace; } /* 统一等宽字体 */
-small { font-size: 12px; } /* 小于 12px 的中文很难阅读，让 small 正常化 */
-
-/** 重置列表元素 **/
-ul, ol { list-style: none; }
-
-/** 重置文本格式元素 **/
-a { text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-
-/** 重置表单元素 **/
-legend { color: #000; } /* for ie6 */
-fieldset, img { border: 0; } /* img 搭车：让链接里的 img 无边框 */
-button, input, select, textarea { font-size: 100%; } /* 使得表单元素在 ie 下能继承字体大小 */
-/* 注：optgroup 无法扶正 */
-
-/** 重置表格元素 **/
-table { border-collapse: collapse; border-spacing: 0; }
-
-/* 清除浮动 */
-.ks-clear:after, .clear:after {
-  content: '\20';
-  display: block;
-  height: 0;
-  clear: both;
-}
-.ks-clear, .clear {
-  *zoom: 1;
-}
-
-.main {padding: 30px 100px;}
-.main h1{font-size:36px; color:#333; text-align:left;margin-bottom:30px; border-bottom: 1px solid #eee;}
-
-.helps{margin-top:40px;}
-.helps pre{
-    padding:20px;
-    margin:10px 0;
-    border:solid 1px #e7e1cd;
-    background-color: #fffdef;
-    overflow: auto;
-}
-
-.icon_lists li{
-    float:left;
-    width: 100px;
-    height:150px;
-    text-align: center;
-}
-.icon_lists .iconfont{
-    font-size: 42px;
-    line-height: 100px;
-    margin: 10px 0;
-    color:#333;
-    -webkit-transition: font-size 0.25s ease-out 0s;
--moz-transition: font-size 0.25s ease-out 0s;
-transition: font-size 0.25s ease-out 0s;
-
-}
-.icon_lists .iconfont:hover{
-    font-size: 100px;
-}
-
-@font-face {font-family: 'iconfont';
-    src: url('iconfont.eot'); /* IE9*/
-    src: url('iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-    url('iconfont.woff') format('woff'), /* chrome、firefox */
-    url('iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-    url('iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
-}
-
-.iconfont{font-family:"iconfont" !important;font-size:16px;font-style:normal;-webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;}
-    </style>
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="iconfont.css">
 </head>
 <body>
     <div class="main">
@@ -112,136 +11,165 @@ transition: font-size 0.25s ease-out 0s;
         <ul class="icon_lists clear">
             
                 <li>
-                    <i class="iconfont">&#x3432;</i>
+                <i class="iconfont icon-xinlangweibo"></i>
                     <div class="name">新浪微博</div>
                     <div class="code">&amp;#x3432;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xe763;</i>
+                <i class="iconfont icon-socialtwittercircle"></i>
                     <div class="name">social_twitter_circle</div>
                     <div class="code">&amp;#xe763;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#x3433;</i>
+                <i class="iconfont icon-facebook"></i>
                     <div class="name">facebook</div>
                     <div class="code">&amp;#x3433;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xf01ca;</i>
+                <i class="iconfont icon-github"></i>
                     <div class="name">github</div>
                     <div class="code">&amp;#xf01ca;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#x3440;</i>
+                <i class="iconfont icon-doubanfangxing"></i>
                     <div class="name">豆瓣 方形</div>
                     <div class="code">&amp;#x3440;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xf01c8;</i>
+                <i class="iconfont icon-douban"></i>
                     <div class="name">豆瓣</div>
                     <div class="code">&amp;#xf01c8;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#x3435;</i>
+                <i class="iconfont icon-renrenwang"></i>
                     <div class="name">人人网</div>
                     <div class="code">&amp;#x3435;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#x3466;</i>
+                <i class="iconfont icon-QQ"></i>
                     <div class="name">QQ</div>
                     <div class="code">&amp;#x3466;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xe60c;</i>
+                <i class="iconfont icon-qq"></i>
                     <div class="name">qq</div>
                     <div class="code">&amp;#xe60c;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xf0005;</i>
+                <i class="iconfont icon-qqkongjian"></i>
                     <div class="name">qq空间</div>
                     <div class="code">&amp;#xf0005;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#x3465;</i>
+                <i class="iconfont icon-tengxunweibo"></i>
                     <div class="name">腾讯微博</div>
                     <div class="code">&amp;#x3465;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xf0003;</i>
+                <i class="iconfont icon-tengxunweixin"></i>
                     <div class="name">腾讯微信</div>
                     <div class="code">&amp;#xf0003;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#x3436;</i>
+                <i class="iconfont icon-5"></i>
                     <div class="name">5</div>
                     <div class="code">&amp;#x3436;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xe60d;</i>
+                <i class="iconfont icon-qzone"></i>
                     <div class="name">qzone</div>
                     <div class="code">&amp;#xe60d;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xf001d;</i>
+                <i class="iconfont icon-baiduzhuanhuan"></i>
                     <div class="name">百度 [转换]</div>
                     <div class="code">&amp;#xf001d;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xe751;</i>
+                <i class="iconfont icon-socialrsscircle"></i>
                     <div class="name">social_rss_circle</div>
                     <div class="code">&amp;#xe751;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xf00ac;</i>
+                <i class="iconfont icon-zhiwu"></i>
                     <div class="name">植物</div>
                     <div class="code">&amp;#xf00ac;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#x3434;</i>
+                <i class="iconfont icon-google"></i>
                     <div class="name">google</div>
                     <div class="code">&amp;#x3434;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xf0171;</i>
+                <i class="iconfont icon-taobao"></i>
                     <div class="name">淘宝</div>
                     <div class="code">&amp;#xf0171;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xe602;</i>
+                <i class="iconfont icon-evernote"></i>
                     <div class="name">evernote</div>
                     <div class="code">&amp;#xe602;</div>
                 </li>
             
                 <li>
-                    <i class="iconfont">&#xe60e;</i>
+                <i class="iconfont icon-luolei"></i>
                     <div class="name">luolei</div>
                     <div class="code">&amp;#xe60e;</div>
+                </li>
+            
+                <li>
+                <i class="iconfont icon-xinlang"></i>
+                    <div class="name">新浪</div>
+                    <div class="code">&amp;#xe61c;</div>
+                </li>
+            
+                <li>
+                <i class="iconfont icon-Twitter"></i>
+                    <div class="name">Twitter</div>
+                    <div class="code">&amp;#xf000e;</div>
+                </li>
+            
+                <li>
+                <i class="iconfont icon-github1"></i>
+                    <div class="name">github-pure</div>
+                    <div class="code">&amp;#xe611;</div>
+                </li>
+            
+                <li>
+                <i class="iconfont icon-dribblepure"></i>
+                    <div class="name">dribble-pure</div>
+                    <div class="code">&amp;#xe612;</div>
+                </li>
+            
+                <li>
+                <i class="iconfont icon-weixin"></i>
+                    <div class="name">微信</div>
+                    <div class="code">&amp;#x343b;</div>
                 </li>
             
         </ul>
 
 
         <div class="helps">
-            <!-- <pre>一定要添加iconfont: "x", asiicode: 120 ,不然在window xp下用safari会出现蓝屏。</pre> <br > <br> -->
             第一步：使用font-face声明字体
             <pre>
 @font-face {font-family: 'iconfont';

@@ -144,10 +144,16 @@ z-index:100;
         text-align: center;
         width: 100%;
         font-size: 1.8rem;
+        height: 2.6rem;
         line-height: 2.4rem;
         border-bottom: 1px solid #e3e3e3;
+        margin-bottom: .5rem;
     }
 
+}
+
+.quick-search{
+    padding: .5rem 1rem;
 }
 
 .searchResult{
@@ -160,6 +166,9 @@ width: 100%;
 white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
+&:hover{
+    color:#000;
+}
 }
 
 
@@ -168,11 +177,13 @@ text-overflow: ellipsis;
 .banner{
     position:relative;
     width: 100%;
-    height: 35rem;
+    height: 32rem;
     background: transparent;
     //background: url(#{$imgPath}/home.jpg) no-repeat center;
     background-size:cover;
     box-shadow: 0 1px 1px #efefef;
+    z-index: 1;
+    //opacity: .5;
 }
 .banner-mask{
     position:absolute;
@@ -181,16 +192,35 @@ text-overflow: ellipsis;
     left:0;
     top:0;
     background: #fff;
-    opacity:.5;
+    background-image: linear-gradient(to bottom,(#FFFFFF),#EDEDED);
+    //background-image: url(#{$imgPath}/banner-luo.png) ;
+    background-repeat:repeat-x;
+    opacity:.8;
     z-index: -2;
 }
 
 .site-head-content{
     width: 70%;
     margin:0 auto;
+    padding-top:5rem;
 }
 .content{
     margin:0 auto;
+}
+
+.home-blog-title{
+    color: rgba(17, 17, 17, 0.8);
+    font-size: 4.4rem;
+    font-weight: 900;
+    line-height: 3.4rem;
+    display: block;
+    width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+    &:hover{
+        color:rgba(17, 17, 17, 0.5);
+        text-shadow: 0 1px 3px #fff;
+    }
 }
 
 .blog-title{
@@ -206,7 +236,7 @@ color:#000;
     margin:0 auto;
     text-align: center;
     img{
-        margin-top: 5rem;
+        margin-top: 3rem;
         width: 8.4rem;
         border-radius:50%;
         box-shadow: 0 0 3px #efefef;
@@ -218,7 +248,37 @@ color:#000;
     font-weight: 100;
     text-align: center;
     font-family: $googleFontExo $fontOSX;
+    &:hover{
+        text-shadow: 0 0 1px #000;
+    }
 }
+
+.social-account{
+    text-align: center;
+    padding:2rem;
+    ul{
+        margin:0;
+        padding: 0;
+        li{
+            list-style: none;
+            display: inline-block;
+            a{
+                font-size:3.2rem;
+                margin:0 .3rem;
+            }
+        }
+    }
+    .iconfont{
+        font-size: 1.8rem;
+        color: rgba(17, 17, 17, 0.5);
+    }
+    .icon-weibo-pure:hover{ color:#E6162D}
+    .icon-twitter-pure:hover{color:#2aa9e0}
+    .icon-github-pure:hover{color:#333333}
+    .icon-dribble-pure:hover{color:#F72D84}
+    .icon-weixin-pure:hover{color:#75D140}
+}
+
 
 /* 顶部cover image相关 */
 
@@ -238,11 +298,14 @@ color:#000;
 
 /* 主页的文章标题 */
 .post-title{
-    height: 3.4rem;
+    width: 100%;
     line-height: 3.2rem;
     padding-top:1rem;
     text-align: center;
     font-family: $googleFontExo $fontOSX;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     //color:rgba(0,0,0,.8);
     a{
         color:rgba(0,0,0,.7);
@@ -337,14 +400,6 @@ padding:0 1rem;
 
 
 
-.top-bar{
-
-}
-
-
-
-
-
 code[class*='language-'],pre[class*='language-'],code[class*='lang-'],pre[class*='lang-'] ,code {
     color: inherit;
     text-shadow: none;
@@ -365,12 +420,24 @@ code[class*='language-'],pre[class*='language-'],code[class*='lang-'],pre[class*
 }
 
 .site-head{
+position:relative;
 width: 100%;
 height:100%;
 background: url(#{$imgPath}/main.png) no-repeat center center;
 background-size: cover;
 box-shadow: inset 0 -5px 10px rgba(0,0,0,.2);
 margin-bottom: 1.5em;
+}
+
+.post-header-mask{
+position:absolute;
+top: 0;
+left: 0;
+right:0;
+width: 100%;
+height:100%;
+background:#000;
+opacity:.9;
 }
 
 .regual,.blurred{
@@ -388,7 +455,7 @@ opacity:0;
 
 
 .post-in-list{
-    width: 70%;
+    width: 64%;
     max-width: 96rem;
     position:relative;
     margin:5rem auto;
@@ -527,7 +594,7 @@ width: 110%;
 margin-left: -5%;
 text-align:center;
 font-style: italic;
-color:#9e9d95;
+color:#9A9A9A;
         &:hover{
             color:#505255;
             text-shadow: 0 0 1px #fff;
@@ -664,25 +731,26 @@ bottom: 4rem;
 left: 50%;
     h4{
         display: none;
+        font-size: 2.4rem;
+        font-weight: 300;
         margin-top: .5rem;
-        margin-left: -2.5rem;
+        margin-left: -3.8rem;
         letter-spacing: .3rem;
-        color: rgba(255,255,255,.5);
+        color: rgba(255,255,255,.95);
     &:hover{
         text-shadow: 0 0 1px rgba(0,0,0,0.5);
     }
     }
     &.hoverLight{
-        opacity: .7;
     }
 }
 
 .story-cover-arrow{
 content: '';
 display: block;
-width: 24px;
-height: 24px;
-border: 2px solid rgba(255,255,255,0.35);
+width: 2.4rem;
+height: 2.4rem;
+border: 0.4rem solid rgba(255,255,255,0.5);
 background: rgba(0,0,0,0);
 border-left: 0;
 border-top: 0;
