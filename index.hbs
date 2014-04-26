@@ -1,15 +1,31 @@
 {{!< default}}
-
+<div class="fixed-body-background"></div>
 {{! The comment above "< default" means - insert everything in this file into
     the {body} of the default.hbs template, which contains our header/footer. }}
 
 {{! The big featured header on the homepage, with the site logo and description }}
-<nav class="top-bar"></nav>
+<nav class="top-bar">
+    <div class="top-wrap">
+        <div class="nav-url">
+            <ul>
+                <li><a href="">Blog</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Works</a></li>
+            </ul>
+        </div>
+        <div class="search-bar">
+            <input type="text" class="search-form-input" placeholder="Search">
+                    <div class="search-bar-result"></div>
+        </div>
+
+    </div>
+</nav>
 <header class="banner">
+        <div class="banner-mask"></div>
         <div class="site-head-content inner">
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
             <h1 class="blog-title">{{@blog.title}}</h1>
-           {{!--  <h2 class="blog-description">{{@blog.description}}</h2> --}}
+            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+            <h2 class="blog-description">{{@blog.description}}</h2>
         </div>
 </header>
 
@@ -21,7 +37,11 @@
 
     <article class="post-in-list {{post_class}}">
         <section class="post-excerpt">
+            <div class="post-image">
+            <a href="{{url}}">
             {{content words="0"}}
+            </a>
+            </div>
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
             <div class="excerpt-word hidden">
             {{excerpt}}
@@ -34,7 +54,7 @@
             </span>
             </div>
 {{!--         <div class="readmore-btn">
-            <a class="btn" href="{{{url}}}" rel="bookmark">阅读更多</a>
+            <a class="btn" href="{{{url}}}" rel="bookmark"></a>
         </div> --}}
     </article>
 
@@ -42,7 +62,7 @@
 
     {{!! After all the posts, we have the previous/next pagination links }}
 
-
+{{pagination}}
 </main>
 
-{{pagination}}
+

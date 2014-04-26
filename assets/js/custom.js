@@ -94,6 +94,13 @@ function checkImg(img){
 }
 
 
+$('.post-image p').each(function(){
+    var _this=$(this);
+    if(_this.html() == ''){
+       _this.closest('.post-excerpt').children('.excerpt-word').show();
+    }
+})
+
 
 $('.single-post-inner img').each(function(){
     var _img=$(this);
@@ -164,14 +171,18 @@ $('.single-post-inner iframe').each(function(){
 /*首页显示简介*/
 
 $('.post-excerpt .post-title').each(function(){
-  var _this=$(this);
-    _this.hover(function(){
-        targetExcerpet=_this.closest('.post-excerpt').children('.excerpt-word');
-        targetExcerpet.show(500);
+
+    $(this).hover(function(){
+        console.log('出现');
+        var _this=$(this);
+        // _this.removeClass('hidden');
+        // targetExcerpet=_this.closest('.post-excerpt').children('.excerpt-word');
+        //targetExcerpet.show();//.addClass('animated fadeIn');
     },function(){
-  var _this=$(this);
-        targetExcerpet=_this.closest('.post-excerpt').children('.excerpt-word');
-        targetExcerpet.hide(300);
+        console.log('消失');
+        var _this=$(this);
+        // targetExcerpet=_this.closest('.post-excerpt').children('.excerpt-word');
+        // targetExcerpet.removeClass('fadeInDown').addClass('fadeOutUp').hide();
     })
 
 })
@@ -247,6 +258,27 @@ function isSiteDomain(url){
 }
 
 
+/*增加搜索功能*/
+// var searchField = $(".search-form-input").ghostHunter({
+//     results: "#results",
+//     onKeyUp: true
+// });
+
+
+var searchField = $(".search-form-input").ghostHunter({
+    results   : ".search-bar-result",
+    onKeyUp         : true,
+    result_template : "<a  class='searchResult' href='{{link}}'>{{title}}</a>",
+    info_template   : "<h4>找到{{amount}}篇相关的文章</h4>",
+    rss            : "/rss",
+    //displaySearchInfo   : false,
+    zeroResultsInfo     : false
+});
+
+$('.search-form-input').focus(function(){
+    console.log('触发');
+    $('.search-bar-result').css({'visibility':'visible','opacity':'1'});
+})
 
 
 /*窗口重新变化的时候*/

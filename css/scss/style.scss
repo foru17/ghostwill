@@ -39,10 +39,10 @@
 } // end of media query
 
 
-@media only screen and (max-width: 1030px) {
+@media only screen and (min-width: 1240px) {
 
         // styles in 1030up.scss
-        @import "1030up";
+        @import "1240up";
 
 } // end of media query
 
