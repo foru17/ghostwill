@@ -685,6 +685,11 @@ a {
   .social-account .iconfont {
     font-size: 1.8rem;
     color: rgba(17, 17, 17, 0.5); }
+  .social-account .icon-feed {
+    font-size: 1.6rem;
+    margin-bottom: .4rem; }
+    .social-account .icon-feed:hover {
+      color: #FF6600; }
   .social-account .icon-weibo-pure:hover {
     color: #E6162D; }
   .social-account .icon-twitter-pure:hover {
@@ -986,16 +991,11 @@ img.imgWrapOut {
   width: 10rem;
   margin: 0 auto; }
 
-.icon-feed {
-  position: relative;
-  margin-top: -2rem;
-  font-size: 2.4rem; }
-
 .tooltip {
+  display: none;
   position: absolute;
   width: 3rem;
   height: 3rem;
-  background: red;
   display: block;
   margin: 0 auto; }
 

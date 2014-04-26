@@ -304,10 +304,10 @@ $('.search-form-input').focus(function(){
     $('.search-bar-result').css({'visibility':'visible','opacity':'1'});
 });
 
-// $('.search-form-input').blur(function(){
-//     console.log('触发');
-//     $('.search-bar-result').css({'visibility':'hidden','opacity':'0'});
-// });
+$('.search-form-input').blur(function(){
+    console.log('触发');
+    $('.search-bar-result').css({'visibility':'hidden','opacity':'0'});
+});
 
 
 /*窗口重新变化的时候*/
