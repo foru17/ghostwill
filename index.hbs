@@ -1,81 +1,77 @@
 {{!< default}}
 <div class="fixed-body-background"></div>
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
-{{! The big featured header on the homepage, with the site logo and description }}
 <nav class="top-bar">
-    <div class="top-wrap">
-        <div class="nav-url">
-            <ul>
-                <li><a href="{{@blog.url}}">Blog</a></li>
-                <li><a href="">About</a></li>
-                <li><a href="">Works</a></li>
-            </ul>
-        </div>
-        <div class="search-bar">
-            <input type="text" class="search-form-input" placeholder="Search">
-                    <div class="search-bar-result">
-                        <div class="quick-search"></div>
-                    </div>
-        </div>
+<div class="top-wrap">
+<div class="nav-url">
+<ul>
+<li><a href="{{@blog.url}}">Blog</a></li>
+<li><a href="">About</a></li>
+<li><a href="">Works</a></li>
+</ul>
+</div>
+<div class="search-bar">
+<input type="text" class="search-form-input" placeholder="Search">
+<div class="search-bar-result">
+<div class="quick-search"></div>
+</div>
+</div>
 
-    </div>
+</div>
 </nav>
 <header class="banner">
-        <div class="banner-mask"></div>
-        <div class="site-head-content inner">
-            <a class="home-blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
-            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-            <h2 class="blog-description">{{@blog.description}}</h2>
-            <div class="social-account">
-                <ul>
-                    <li>
-                        <a href="http://weibo.com/foru17" target="_blank"><i class="iconfont icon-weibo-pure">&#xe61c;</i></a>
-                        <a href="https://twitter.com/foru17" target="_blank"><i class="iconfont icon-twitter-pure">&#xf000e;</i></a>
-                        <a href="https://github.com/foru17" target="_blank"><i class="iconfont icon-github-pure">&#xe611;</i></a>
-                        <a href="https://dribbble.com/luolei" target="_blank"><i class="iconfont icon-dribble-pure">&#xe612;</i></a>
-                        <a href="http://instagram.com/foru17" target="_blank"><i class="iconfont icon-instagram-pure">&#xe613;</i></a>
-                       {{!--  <a href=""><i class="iconfont icon-weixin-pure">&#x343b;</i></a> --}}
-                        <a href="{{@blog.url}}/rss/"><i class="iconfont icon-feed">&#xe751;</i></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<div class="banner-mask"></div>
+<div class="site-head-content inner">
+<a class="home-blog-title" href="{{@blog.url}}">{{@blog.title}}</a>
+{{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+<h2 class="blog-description">{{@blog.description}}</h2>
+<div class="social-account">
+<ul>
+<li>
+<a href="http://weibo.com/foru17" target="_blank"><i class="iconfont icon-weibo-pure">&#xe61c;</i></a>
+<a href="https://twitter.com/foru17" target="_blank"><i class="iconfont icon-twitter-pure">&#xf000e;</i></a>
+<a href="https://github.com/foru17" target="_blank"><i class="iconfont icon-github-pure">&#xe611;</i></a>
+<a href="https://dribbble.com/luolei" target="_blank"><i class="iconfont icon-dribble-pure">&#xe612;</i></a>
+<a href="http://instagram.com/foru17" target="_blank"><i class="iconfont icon-instagram-pure">&#xe613;</i></a>
+{{!--  <a href=""><i class="iconfont icon-weixin-pure">&#x343b;</i></a> --}}
+<a href="{{@blog.url}}/rss/"><i class="iconfont icon-feed">&#xe751;</i></a>
+</li>
+</ul>
+</div>
+</div>
 
 </header>
 
 {{! The main content area on the homepage }}
 <main id="container" class="content homepage" role="main">
-    {{! Each post will be output using this markup }}
-    {{#foreach posts}}
+{{! Each post will be output using this markup }}
+{{#foreach posts}}
 
-    <article class="post-in-list {{post_class}}">
-        <section class="post-excerpt">
-            <div class="post-image">
-            <a href="{{url}}">
-            {{content words="0"}}
-            </a>
-            </div>
-            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-            <div class="excerpt-word hidden">
-            {{excerpt}}
-            </div>
-        </section>
-            <div class="post-meta">
-                <span class="post-time"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
-                <span class="post-tags">
-                 {{tags prefix="" separator=" "}}
-                </span>
-            </div>
+<article class="post-in-list {{post_class}}">
+<section class="post-excerpt">
+<div class="post-image">
+<a href="{{url}}">
+{{content words="0"}}
+</a>
+</div>
+<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+<div class="excerpt-word hidden">
+{{excerpt}}
+</div>
+</section>
+<div class="post-meta">
+<span class="post-time"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time></span>
+<span class="post-tags">
+{{tags prefix="" separator=" "}}
+</span>
+</div>
 {{!--         <div class="readmore-btn">
-            <a class="btn" href="{{{url}}}" rel="bookmark"></a>
-        </div> --}}
-    </article>
+	<a class="btn" href="{{{url}}}" rel="bookmark"></a>
+		</div> --}}
+		</article>
 
-    {{/foreach}}
+{{/foreach}}
 
-    {{!! After all the posts, we have the previous/next pagination links }}
+{{!! After all the posts, we have the previous/next pagination links }}
 
 {{pagination}}
 </main>
