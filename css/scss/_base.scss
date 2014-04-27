@@ -13,6 +13,7 @@ html {
     max-height: 100%;
     font-size: 62.5%;//1rem=1em=10px 设置默认的字体
     -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
 
 body {
@@ -319,9 +320,6 @@ color:#000;
     padding-top:1rem;
     text-align: center;
     font-family: $googleFontExo $fontOSX;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     //color:rgba(0,0,0,.8);
     a{
         color:rgba(0,0,0,.7);
@@ -338,7 +336,7 @@ color:#000;
     a{
         font-size:4rem;
         color:#fff;
-        line-height:4rem;
+        line-height:4.8rem;
         text-shadow: 0 1px 5px #d3d3d3;
         -webkit-transition: all .5s ease;
         transition: transform 0.5s ease;
@@ -481,6 +479,11 @@ opacity:0;
         width: 100%;
         max-width: 100%;
         height: auto;
+    }
+    .post-title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     }
 }
 

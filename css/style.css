@@ -459,7 +459,8 @@ html, body {
 html {
   max-height: 100%;
   font-size: 62.5%;
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent; }
 
 body {
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3";
@@ -729,10 +730,7 @@ a {
   line-height: 3.2rem;
   padding-top: 1rem;
   text-align: center;
-  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3";
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis; }
+  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
   .post-title a {
     color: rgba(0, 0, 0, 0.7);
     font-weight: 600;
@@ -746,7 +744,7 @@ a {
   .post-cover-info .post-title a {
     font-size: 4rem;
     color: #fff;
-    line-height: 4rem;
+    line-height: 4.8rem;
     text-shadow: 0 1px 5px #d3d3d3;
     -webkit-transition: all .5s ease;
     transition: transform 0.5s ease; }
@@ -855,6 +853,10 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
     width: 100%;
     max-width: 100%;
     height: auto; }
+  .post-in-list .post-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; }
 
 .post-image p {
   line-height: 0; }
