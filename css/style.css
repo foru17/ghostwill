@@ -646,8 +646,6 @@ a {
   font-weight: 900;
   line-height: 3.4rem;
   display: block;
-  width: 32rem;
-  margin: 0 auto;
   text-align: center; }
   .home-blog-title:hover {
     color: rgba(17, 17, 17, 0.5);
@@ -931,7 +929,9 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
     max-width: 100%; }
 
 .single-post-inner {
-  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
+  font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3";
+  word-break: break-all;
+  word-break: break-word; }
   .single-post-inner a {
     display: inline-block;
     line-height: 1.6rem; }
@@ -3353,6 +3353,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @media only screen and (max-width: 481px) {
   .single-post {
     width: 80%; }
+
+  .home-blog-title {
+    font-size: 2.4rem; }
 
   .post-cover-info {
     font-size: 3rem;

@@ -224,8 +224,6 @@ text-overflow: ellipsis;
     font-weight: 900;
     line-height: 3.4rem;
     display: block;
-    width: 32rem;
-    margin: 0 auto;
     text-align: center;
     &:hover{
         color:rgba(17, 17, 17, 0.5);
@@ -580,6 +578,8 @@ line-height:2.6rem;
 
 .single-post-inner{
     font-family: $googleFontExo $fontOSX;
+    word-break: break-all;
+    word-break: break-word;
     a{
         display: inline-block;
         line-height: 1.6rem;
