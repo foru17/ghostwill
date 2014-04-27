@@ -95,12 +95,15 @@ $('.post-image p').each(function(){
 })
 
 
-$('.single-post-inner img[alt="wrap"]').each(function(){
-   $(this).addClass('wrap');
-});
+// $('.single-post-inner img[alt="wrap"]').each(function(){
+//    $(this).
+// });
 
 $('.single-post-inner img').each(function(){
     var _img=$(this);
+    if((_img.attr('alt')=='wrap') == true ){
+        _img.addClass('wrap');
+    }
      checkImg(_img);
 });
 

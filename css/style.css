@@ -534,7 +534,7 @@ a {
 
 .top-wrap {
   width: 70%;
-  max-width: 96rem;
+  max-width: 76rem;
   margin: 0 auto; }
 
 .nav-url {
@@ -3370,7 +3370,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   .nav-url {
     width: 100%; }
     .nav-url li {
-      margin-right: 1rem; }
+      margin-right: .5rem; }
 
   .post-in-list {
     width: 95%; }
