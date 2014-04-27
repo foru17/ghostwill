@@ -1,22 +1,32 @@
-html {
+
+html,body{
     height: 100%;
-    min-width: 32rem; //最低宽度320px;
+    width: 100%;
+    min-height: 100%;
+    margin:0;
+    padding: 0;
+
+}
+
+
+html {
     max-height: 100%;
     font-size: 62.5%;//1rem=1em=10px 设置默认的字体
     -webkit-font-smoothing: antialiased;
 }
 
 body {
-    height: 100%;
     font-family: $fontOSX;
     font-size: 1.4rem;
     line-height: 1.6em;
     color: #3A4145;
+    min-width: 320px; //最低宽度320px;
 
 }
 
 .home-template{
 }
+
 
 h1,h2,h3,h4,h5,h6{
     margin:0;
@@ -284,6 +294,7 @@ color:#000;
     .icon-github-pure:hover{color:#333333}
     .icon-dribble-pure:hover{color:#F72D84}
     .icon-weixin-pure:hover{color:#75D140}
+    .icon-instagram-pure:hover{color:#DCCFBF}
 }
 
 
@@ -547,6 +558,7 @@ line-height:2.6rem;
     margin: 0 auto;
     font-size: 1.8rem;
     line-height: 2.8rem;
+    overflow: hidden;
     img{
         display: block;
         margin: 0 auto;

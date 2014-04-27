@@ -426,6 +426,9 @@ img::-moz-selection {
 .icon-weixin-pure {
   color: #75D140; }
 
+.icon-instagram-pure {
+  color: #DCCFBF; }
+
 /* 自定义IconFont CSS 才用:before的形式 */
 .single-post-inner .icon-local:before {
   content: "\0f00ac"; }
@@ -446,19 +449,24 @@ img::-moz-selection {
 .single-post-inner .icon-luolei:before {
   content: "\00e60e"; }
 
-html {
+html, body {
   height: 100%;
-  min-width: 32rem;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0; }
+
+html {
   max-height: 100%;
   font-size: 62.5%;
   -webkit-font-smoothing: antialiased; }
 
 body {
-  height: 100%;
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3";
   font-size: 1.4rem;
   line-height: 1.6em;
-  color: #3A4145; }
+  color: #3A4145;
+  min-width: 320px; }
 
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -700,6 +708,8 @@ a {
     color: #F72D84; }
   .social-account .icon-weixin-pure:hover {
     color: #75D140; }
+  .social-account .icon-instagram-pure:hover {
+    color: #DCCFBF; }
 
 /* 顶部cover image相关 */
 .post-cover-info {
@@ -907,7 +917,8 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
   max-width: 80rem;
   margin: 0 auto;
   font-size: 1.8rem;
-  line-height: 2.8rem; }
+  line-height: 2.8rem;
+  overflow: hidden; }
   .single-post img {
     display: block;
     margin: 0 auto;
@@ -3318,8 +3329,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   animation-name: rollOut; }
 
 @media only screen and (max-width: 321px) {
-  .single-post {
-    width: 80%; }
+  .post-in-list {
+    width: 95%; }
 
   .post-cover-info {
     font-size: 3rem;
@@ -3347,13 +3358,17 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     width: 100%; }
 
   .post-in-list {
-    width: 90%; }
+    width: 95%; }
 
   .search-bar {
     display: none; } }
 @media only screen and (max-width: 768px) {
-  .single-post {
-    width: 80%; }
+  .post-in-list {
+    width: 95%;
+    margin: 2rem auto; }
+
+  .search-bar {
+    display: none; }
 
   .post-cover-info .post-title a {
     font-size: 2.2rem;
