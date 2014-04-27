@@ -558,7 +558,7 @@ line-height:2.6rem;
     margin: 0 auto;
     font-size: 1.8rem;
     line-height: 2.8rem;
-    overflow: hidden;
+    //overflow: hidden;
     img{
         display: block;
         margin: 0 auto;
@@ -567,6 +567,10 @@ line-height:2.6rem;
         &:hover{
             box-shadow:inset 0 0 1px rgba(255,255,255,0.5)
         }
+    }
+
+    iframe{
+        max-width: 100%;
     }
 }
 
@@ -701,6 +705,7 @@ text-align:center;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
   opacity: .5;
+  z-index: 1000;
 }
 #to-top:hover {
   -khtml-opacity: .2;
