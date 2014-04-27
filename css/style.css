@@ -962,6 +962,8 @@ img.imgWrapOut {
   text-align: center;
   font-style: italic;
   color: #9A9A9A; }
+  .post-content blockquote p {
+    text-align: center; }
   .post-content blockquote:hover {
     color: #505255;
     text-shadow: 0 0 1px #fff; }
