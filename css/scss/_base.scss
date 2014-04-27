@@ -283,8 +283,8 @@ color:#000;
         color: rgba(17, 17, 17, 0.5);
     }
     .icon-feed{
-        font-size:1.6rem;
-        margin-bottom: .4rem;
+        font-size:1.5rem;
+        margin-bottom: .2rem;
         &:hover{
             color:#FF6600;
         }
@@ -294,7 +294,7 @@ color:#000;
     .icon-github-pure:hover{color:#333333}
     .icon-dribble-pure:hover{color:#F72D84}
     .icon-weixin-pure:hover{color:#75D140}
-    .icon-instagram-pure:hover{color:#DCCFBF}
+    .icon-instagram-pure:hover{color:#B66F43}
 }
 
 
@@ -491,8 +491,12 @@ opacity:0;
         line-height: 0;
     }
     img{
+        position:relative;
+         //-webkit-filter: brightness(100%);
+        -webkit-transition: all 1s ease;
+        transition: all 1s ease;
         &:hover{
-            opacity: .8;
+            //-webkit-filter: grayscale(50%);
         }
     }
 }
@@ -649,6 +653,9 @@ color:#9A9A9A;
         top: -0.5rem;
         width: 2rem;
         height: 2rem;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
         transform: rotate(45deg);
         box-shadow: 0px -4px 7px -7px #171717;
     }
@@ -780,7 +787,6 @@ outline: 0;
 -webkit-transform: rotate(45deg);
 -moz-transform: rotate(45deg);
 -ms-transform: rotate(45deg);
--o-transform: rotate(45deg);
 transform: rotate(45deg);
 cursor: pointer;
     &:hover{
