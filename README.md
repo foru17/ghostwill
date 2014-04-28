@@ -1,5 +1,7 @@
 #will-box
 
+![ghostwill](http://file.is26.com/wp-image/2014/04/ghostwill.png)
+
 The theme is designed by [Luolei.org](http://luolei.org).
 
 for more info.Please contact [@foru17](http://twitter.com/foru17)
