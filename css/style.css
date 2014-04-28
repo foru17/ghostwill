@@ -912,7 +912,9 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
   padding: 3rem 2rem 1rem;
   text-align: justify;
   font-size: 1.8rem;
-  line-height: 2.6rem; }
+  line-height: 2.6rem;
+  word-break: break-all;
+  word-break: break-word; }
 
 .single-post {
   width: 64%;
@@ -927,7 +929,7 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
     height: auto; }
     .single-post img:hover {
       box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5); }
-  .single-post iframe {
+  .single-post iframe, .single-post embed {
     max-width: 100%; }
 
 .single-post-inner {
@@ -936,7 +938,7 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
   word-break: break-word; }
   .single-post-inner a {
     display: inline-block;
-    line-height: 1.6rem; }
+    line-height: 2.8rem; }
     .single-post-inner a:hover {
       opacity: .8; }
   .single-post-inner .iconfont {
@@ -3376,7 +3378,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     width: 95%; }
 
   .search-bar {
-    display: none; } }
+    display: none; }
+
+  .pagination {
+    width: 90%; } }
 @media only screen and (max-width: 768px) {
   .post-in-list {
     width: 95%;

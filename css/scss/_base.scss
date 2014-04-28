@@ -555,6 +555,8 @@ padding:3rem 2rem 1rem;
 text-align:justify;
 font-size:1.8rem;
 line-height:2.6rem;
+word-break: break-all;
+word-break: break-word;
 }
 
 .single-post{
@@ -574,7 +576,7 @@ line-height:2.6rem;
         }
     }
 
-    iframe{
+    iframe,embed{
         max-width: 100%;
     }
 }
@@ -585,7 +587,7 @@ line-height:2.6rem;
     word-break: break-word;
     a{
         display: inline-block;
-        line-height: 1.6rem;
+        line-height: 2.8rem;
         &:hover{
             opacity: .8;
         }
