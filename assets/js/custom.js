@@ -10,7 +10,7 @@ var _siteDomain=  'luolei.org' || window.location.host;
 * 尼玛这遇到坑啊，还要自己写插件处理这个评论的迁移
     */
     var  duoshuoTrans= window.location.pathname;
-    $('.ds-thread').attr('data-url','http://luolei.org'+duoshuoTrans);
+    $('.ds-thread').attr('data-url','http://blog.luolei.org'+duoshuoTrans);
     //document.getElementsByClassName('ds-thread').setAttribute('data-url','http://luolei.org'+duoshuoTrans);
 
 

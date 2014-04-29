@@ -1077,7 +1077,7 @@ img.imgWrapOut {
 .cover-slide-more {
   position: absolute;
   bottom: 4rem;
-  left: 50%; }
+  left: 48%; }
   .cover-slide-more h4 {
     display: none;
     font-size: 2.4rem;
@@ -3381,7 +3381,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     display: none; }
 
   .pagination {
-    width: 90%; } }
+    width: 90%; }
+
+  .cover-slide-more {
+    margin-left: 45%; } }
 @media only screen and (max-width: 768px) {
   .post-in-list {
     width: 95%;

@@ -8,6 +8,12 @@ for more info.Please contact [@foru17](http://twitter.com/foru17)
 
 本 Ghost 主题为26号设计工作室作品
 
+####注意
+
+若使用本主题，请修改`default.hbs`文件中的谷歌统计 Google Analytics 代码。
+
+若使用多说评论且有从wordpress迁移的需求，请修改js文件中的原博客`data-url`地址。
+
 
 ####关于这个主题
 
