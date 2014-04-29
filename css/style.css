@@ -929,8 +929,11 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
     height: auto; }
     .single-post img:hover {
       box-shadow: inset 0 0 1px rgba(255, 255, 255, 0.5); }
-  .single-post iframe, .single-post embed {
+  .single-post iframe, .single-post embed, .single-post video {
     max-width: 100%; }
+  .single-post video {
+    display: block;
+    margin: 0 auto; }
 
 .single-post-inner {
   font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3";

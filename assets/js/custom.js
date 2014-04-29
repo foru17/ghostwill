@@ -63,7 +63,6 @@ function checkImg(img){
         if($(img).hasClass('wrap') == true){
             isMarkWrap = true;
             console.log('wrap标记');
-            console.log($(img));
         }else{
             console.log('不满足wrap');
             return;
@@ -95,10 +94,6 @@ $('.post-image p').each(function(){
 })
 
 
-// $('.single-post-inner img[alt="wrap"]').each(function(){
-//    $(this).
-// });
-
 $('.single-post-inner img').each(function(){
     var _img=$(this);
     if((_img.attr('alt')=='wrap') == true ){
@@ -110,7 +105,7 @@ $('.single-post-inner img').each(function(){
 
 
 /*处理iframe宽度*/
-$('.single-post-inner iframe').each(function(){
+$('.single-post-inner iframe, .single-post-inner video ').each(function(){
     // console.log('处理iframe');
     /*获得原始的width，调整适应比例*/
     var _this=$(this);
@@ -296,6 +291,7 @@ $(window).resize(function() {
     /*重新修改文章图片大小*/
     console.log('Resize');
     $('.single-post-inner img').each(function(){
+        console.log(1);
         var _img=$(this);
          checkImg(_img);
     })

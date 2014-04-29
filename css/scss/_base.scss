@@ -576,8 +576,12 @@ word-break: break-word;
         }
     }
 
-    iframe,embed{
+    iframe,embed,video{
         max-width: 100%;
+    }
+    video{
+        display: block;
+        margin:0 auto;
     }
 }
 
