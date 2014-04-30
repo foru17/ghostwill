@@ -86,6 +86,7 @@ function checkImg(img){
 }
 
 
+/*若文章没有图片，则在首页显示文字摘要*/
 $('.post-image p').each(function(){
     var _this=$(this);
     if(_this.html() == ''){
@@ -105,8 +106,7 @@ $('.single-post-inner img').each(function(){
 
 
 /*处理iframe宽度*/
-$('.single-post-inner iframe, .single-post-inner video ').each(function(){
-    // console.log('处理iframe');
+$('.single-post-inner iframe, .single-post-inner frame, .single-post-inner video ').each(function(){
     /*获得原始的width，调整适应比例*/
     var _this=$(this);
     var originalWidth=_this.attr('width'),
@@ -129,7 +129,6 @@ $('.single-post-inner iframe, .single-post-inner video ').each(function(){
     /*判断cover-image插件*/
 
     if($('.single-post-inner img').length>0){
-        console.log('apple');
         /*如果文章存在图片，首先判断是否有自定义 cover-image*/
         if($('.single-post-inner img[alt="cover-image"]').length>0){
             /*如果有自定义cover，则使用这张*/
@@ -193,30 +192,10 @@ $('.post-excerpt .post-title').each(function(){
 /*如果没有tag，则默认隐藏*/
 $('.post-meta .post-tags').each(function(){
     var _this=$(this);
-    console.log(_this.children().length);
     if(_this.children().length == 0){
         _this.addClass('hidden');
     }
 })
-
-/*向下滚动顶部虚化*/
-
-function fader() {
-var r = $('.blurred'),
-wh = $(window).height(),
-dt = $(document).scrollTop(),
-elView, opacity;
-
-// Loop elements with class "blurred"
-r.each(function() {
-elView = wh - ($(this).offset().top - dt + 200);
-if (elView > 0) { // Top of DIV above bottom of window.
-opacity = 1 / (wh + $(this).height()) * elView * 2
-if (opacity < 1) // Bottom of DIV below top of window.
-$(this).css('opacity', opacity);
-}
-});
-}
 
 $(document).bind('scroll', fader);
 
@@ -232,13 +211,13 @@ function urlIconlize(url){
         'github':'icon-github',
         'douban':'icon-douban',
         'google':'icon-google',
-        'luolei':'icon-luolei'
+        'luolei':'icon-luolei',
+        'dribble':'icon-dribble'
 
     }
 
     for(var name in iconMap){
         if(typeof iconMap[name] !== 'function'){
-            //console.log('遍历map  '+name);
             var MapKey=name;
             if(url.indexOf(MapKey)>=0){
                 domain=MapKey;
@@ -258,11 +237,6 @@ function isSiteDomain(url){
 
 
 /*增加搜索功能*/
-// var searchField = $(".search-form-input").ghostHunter({
-//     results: "#results",
-//     onKeyUp: true
-// });
-
 
 var searchField = $(".search-form-input").ghostHunter({
     results   : ".quick-search",
@@ -275,12 +249,10 @@ var searchField = $(".search-form-input").ghostHunter({
 });
 
 $('.search-form-input').focus(function(){
-    console.log('触发');
     $('.search-bar-result').css({'visibility':'visible','opacity':'1'});
 });
 
 $('.search-form-input').blur(function(){
-    console.log('触发');
     $('.search-bar-result').css({'visibility':'hidden','opacity':'0'});
 });
 
@@ -289,9 +261,7 @@ $('.search-form-input').blur(function(){
 
 $(window).resize(function() {
     /*重新修改文章图片大小*/
-    console.log('Resize');
     $('.single-post-inner img').each(function(){
-        console.log(1);
         var _img=$(this);
          checkImg(_img);
     })
