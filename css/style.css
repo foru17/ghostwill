@@ -3397,7 +3397,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     width: 90%; }
 
   .cover-slide-more {
-    margin-left: 45%; } }
+    left: 45%; } }
 @media only screen and (max-width: 768px) {
   .post-in-list {
     width: 95%;
