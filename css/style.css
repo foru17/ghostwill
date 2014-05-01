@@ -954,6 +954,11 @@ code[class*='language-'], pre[class*='language-'], code[class*='lang-'], pre[cla
     vertical-align: top;
     margin-left: .1rem;
     margin-right: .1rem; }
+  .single-post-inner p code {
+    padding: .3rem .6rem;
+    border-radius: .5rem;
+    background: #f8f8f8;
+    border: 1px solid #ddd; }
 
 img.imgWrapOut {
   max-width: 200%; }

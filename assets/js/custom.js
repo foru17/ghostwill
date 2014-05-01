@@ -23,14 +23,12 @@ document.onkeydown = checkKey;
 function checkKey(e) {
     e = e || window.event;
     if (e.keyCode == '74') {
-        console.log('触发J');
         $('html,body').stop();
         $('html,body').animate({
             scrollTop: $(window).stop().scrollTop() + 200
         },'fast')
     }
     else if (e.keyCode == '75') {
-        console.log('触发K');
         $('html,body').stop();
         $('html,body').animate({
             scrollTop: $(window).stop().scrollTop() - 200
@@ -84,6 +82,7 @@ function checkImg(img){
         })
 
 }
+
 
 
 /*若文章没有图片，则在首页显示文字摘要*/
@@ -186,6 +185,18 @@ $('.post-excerpt .post-title').each(function(){
 })
 
 
+
+$(window).resize(function() {
+    /*重新修改文章图片大小*/
+    visualContainerWidh=$(window).width();
+    // contentWidth=$('.post-content').width();
+    $('.single-post-inner img').each(function(){
+        var _img=$(this);
+         checkImg(_img);
+    })
+});
+
+
 /*顶部向下滚动*/
 
 
@@ -197,7 +208,7 @@ $('.post-meta .post-tags').each(function(){
     }
 })
 
-$(document).bind('scroll', fader);
+// $(document).bind('scroll', fader);
 
 /*给文章中的url添加iconfont方便识别*/
 function urlIconlize(url){
@@ -258,15 +269,6 @@ $('.search-form-input').blur(function(){
 
 
 /*窗口重新变化的时候*/
-
-$(window).resize(function() {
-    /*重新修改文章图片大小*/
-    $('.single-post-inner img').each(function(){
-        var _img=$(this);
-         checkImg(_img);
-    })
-});
-
 
 
 /*Document Ready*/
@@ -350,4 +352,7 @@ $('.post-template').ready(function(){
     })
 
 })
+
+
+
 

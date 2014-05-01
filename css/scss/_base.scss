@@ -602,6 +602,14 @@ word-break: break-word;
         margin-left: .1rem;
         margin-right: .1rem;
     }
+    p{
+        code{
+            padding: .3rem .6rem;
+            border-radius: .5rem;
+            background: #f8f8f8;
+            border:1px solid #ddd;
+        }
+    }
 }
 
 img.imgWrapOut{
