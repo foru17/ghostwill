@@ -675,7 +675,7 @@ a {
     box-shadow: 0 0 3px #efefef; }
 
 .blog-description {
-  margin-top: 3rem;
+  margin-top: 2rem;
   font-weight: 100;
   text-align: center;
   font-family: "Exo" "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3"; }
@@ -684,7 +684,7 @@ a {
 
 .social-account {
   text-align: center;
-  padding: 2rem; }
+  padding: 0 2rem; }
   .social-account ul {
     margin: 0;
     padding: 0; }
