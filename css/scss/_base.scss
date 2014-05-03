@@ -279,11 +279,11 @@ color:#000;
     }
     .iconfont{
         font-size: 1.8rem;
+        line-height: 1.8rem;
         color: rgba(17, 17, 17, 0.5);
     }
     .icon-feed{
-        font-size:1.5rem;
-        margin-bottom: .2rem;
+        font-size:1.4rem;
         &:hover{
             color:#FF6600;
         }
@@ -857,3 +857,5 @@ cursor: pointer;
 #imgSinaShare{
     display: none;
 }
+
+

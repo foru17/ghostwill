@@ -696,10 +696,10 @@ a {
         margin: 0 .3rem; }
   .social-account .iconfont {
     font-size: 1.8rem;
+    line-height: 1.8rem;
     color: rgba(17, 17, 17, 0.5); }
   .social-account .icon-feed {
-    font-size: 1.5rem;
-    margin-bottom: .2rem; }
+    font-size: 1.4rem; }
     .social-account .icon-feed:hover {
       color: #FF6600; }
   .social-account .icon-weibo-pure:hover {
