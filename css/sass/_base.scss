@@ -17,7 +17,7 @@ html {
 }
 
 body {
-    font-family: $fontOSX;
+    font-family: $fontOSX $fontBase;
     font-size: 1.4rem;
     line-height: 1.6em;
     color: #3A4145;
