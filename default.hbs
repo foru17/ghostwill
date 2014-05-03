@@ -17,16 +17,15 @@
 		{{! 添加 gogole puls 信息 请修改成自己的地址}}
 		<link rel="author" href="https://plus.google.com/105790146178074084423/">
 		{{! Styles'n'Scripts }}
-		<link rel="stylesheet" type="text/css" href="{{asset "../css/style.css"}}" />
+		<link rel="stylesheet" type="text/css" href="{{asset "/css/min.style.css"}}" />
 		<link href='http://fonts.googleapis.com/css?family=Exo:100,400' rel='stylesheet' type='text/css'>
+        <!--[if lte IE 8]>
+            为了你的浏览体验，请升级您的IE或者使用其他高级浏览器。
+        <![endif]-->
 
-		{{!-- ImageLazyLoad --}}
-
-		{{! Ghost outputs important style and meta data with this tag }}
 		{{ghost_head}}
 	</head>
 	<body class="{{body_class}}">
-		{{! Everything else gets inserted here }}
 		{{{body}}}
 
 		<footer class="site-footer">
@@ -53,7 +52,7 @@
 		<script type="text/javascript" src="{{asset "js/jquery.stellar.min.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/jquery.ghostHunter.min.js"}}"></script>
 		<script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
-		<script type="text/javascript" src="{{asset "js/custom.js"}}"></script>
+		<script type="text/javascript" src="{{asset "js/min.v.js"}}"></script>
 		{{!-- 增加谷歌统计 --}}
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
