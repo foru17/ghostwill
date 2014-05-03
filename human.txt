@@ -1,0 +1,26 @@
+/* About */
+    Name: Luo Lei
+    Contact: i [at] luolei.org
+    Twitter: @foru17
+    From:Shenzhen, Beijing, China
+
+
+/* SITE */
+    Last update:2014/05/02
+    Language: English / Chinese
+    Doctype:HTML5
+    IDE: Sublime text 3, Grunt, Sass, Git, Github
+
+/*团队*/
+    设计：罗磊
+    邮箱：i [at] luolei.org
+    微博：http://weibo.com/foru17
+    来自：深圳, 北京 ,中国
+
+
+/*站点*/
+    最近更新：2014/05/2
+    语言：英文 /中文简体
+    Doctype: HTML5
+    环境：Nodejs, Ghost
+    开发环境：Sublime text 3, Grunt, Sass, Git, Github
