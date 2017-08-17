@@ -24,34 +24,6 @@
 <div class="single-post-inner">
 {{content}}
 </div>
-<section class="share">
-<h4>分享一下</h4>
-<div class="share-icons">
-<a class="icon-share" href="http://service.weibo.com/share/share.php?url={{url absolute="true"}}&title={{encode title}}"
-onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-<span class=""><i class="iconfont icon-weibo">&#x3432;</i></span>
-</a>
-
-<a class="icon-share" href=" http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?desc={{encode title}}&url={{url absolute="true"}}"
-onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-<span class=""><i class="iconfont icon-qzone">&#xe60d;</i></span>
-</a>
-<a class="icon-share" href="http://twitter.com/share?text={{encode title}}&url={{url absolute="true"}}"
-onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-<span class=""><i class="iconfont  icon-twitter">&#xe763;</i></span>
-</a>
-<a class="icon-share" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-<span class=""><i class="iconfont  icon-facebook">&#x3433;</i></span>
-</a>
-<a class="icon-share icon-weibo" href="https://plus.google.com/share?url={{url absolute="true"}}"
-onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-<span class=""><i class="iconfont  icon-weixin">&#x3436;</i></span>
-</a>
-</div>
-</section>
-<img id="imgSinaShare" class="img_sina_share" title="将选中内容分享到新浪微博" src="http://simg.sinajs.cn/blog7style/images/common/share.gif" />
-
 <section class="author">
 {{#if author.image}}
 <a href="{{author.website}}" class="post-author-avatar">
@@ -78,22 +50,4 @@ onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');ret
 {{/post}}
 
 </article>
-
 </main>
-
-<!-- Duoshuo Comment BEGIN -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"luolei"};
-(function() {
- var ds = document.createElement('script');
- ds.type = 'text/javascript';ds.async = true;
- ds.src = 'http://static.duoshuo.com/embed.js';
- ds.charset = 'UTF-8';
- (document.getElementsByTagName('head')[0]
-  || document.getElementsByTagName('body')[0]).appendChild(ds);
- })();
-
-
-
-</script>
-<!-- Duoshuo Comment END -->
