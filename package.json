@@ -1,6 +1,6 @@
 {
   "name": "ghostwill",
-  "version": "0.0.2alpha",
+  "version": "0.0.1",
   "author": "luolei",
  "devDependencies": {
     "grunt": "~0.4.1",
